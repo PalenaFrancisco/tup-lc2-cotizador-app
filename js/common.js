@@ -1,0 +1,1 @@
+/*Codigo que afectan a más de una pantalla*/
