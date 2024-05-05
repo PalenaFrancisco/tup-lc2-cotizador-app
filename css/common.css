@@ -167,5 +167,42 @@ section ul li {
 
 footer {
   grid-area: footer;
-  background-color: black;
+  background-color: gray;
+}
+
+.footerContainer{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.footerContainerCaja {
+  flex-grow: 1;
+}
+
+.footerContainerLista{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+
+}
+
+.footerContainerLista li span{
+  text-decoration: underline;
+}
+
+#contactoEscribanos {
+  text-decoration: underline;
+  font-weight: bold;
+  align-self: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+.footerContainerCaja.autores {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  
 }
