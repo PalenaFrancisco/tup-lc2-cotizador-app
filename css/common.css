@@ -63,9 +63,10 @@ header {
 .contenedor_header {
   display: flex;
   align-items: center;
-  /* Alinea los elementos verticalmente */
   justify-content: center;
-  /* Centra los elementos horizontalmente */
+  width: 100%;
+  height: 100%;
+  backdrop-filter: brightness(.75);
 }
 
 header .contenedor_header .texto-cabecera {
