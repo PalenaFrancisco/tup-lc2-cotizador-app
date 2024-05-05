@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,6 +12,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/pages/index.css" />
     <title>Cotizador de Monedas Web</title>
   </head>
 
@@ -77,13 +78,99 @@
       <main>
         <div class="migas_pan">Miguitas de pan</div>
         <div class="contenido_main">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia
-          consequatur quod doloribus modi atque non, nisi illo, porro id illum,
-          nesciunt sapiente quos dolorem laudantium quo eius obcaecati. Soluta,
-          sequi? Dolorum, nobis est suscipit veritatis necessitatibus eum!
-          Soluta, iure a earum sunt officia, et accusamus ad corporis suscipit
-          obcaecati illum possimus magni recusandae fuga odio, reiciendis
-          numquam consectetur aliquam. Esse!
+
+          <h2 id="titulo">Pizarra de Cotizaciones</h2>
+
+          <div class="contenido_main--box" id="selector">
+            <label for="moneda">Seleccione una moneda:</label>
+            <select name="moneda" id="moneda">
+              <option value="" selected disabled></option>
+              <option value="TODAS">Todas</option>
+              <option value="Dolar oficial">Dólar oficial</option>
+              <option value="Dolar Blue">Dólar Blue</option>
+              <option value="Dolar Bolsa (MEP)">Dólar Bolsa (MEP)</option>
+              <option value="Dolar Contado con Liqui (CCL)">
+                Dólar Contado con Liqui (CCL)
+              </option>
+              <option value="Dolar Tarjeta">Dólar Tarjeta</option>
+              <option value="Dolar Mayorista">Dólar Mayorista</option>
+              <option value="Dolar Cripto">Dólar Cripto</option>
+              <option value="Euro">Euro</option>
+              <option value="Real Brasileño">Real Brasileño</option>
+              <option value="Peso Chileno">Peso Chileno</option>
+              <option value="Peso Urguayo">Peso Urguayo</option>
+            </select>
+          </div>
+
+          <div class="contenido_main--box grid" id="ver-moneda">
+            <div class="contenido_main--box--card">
+              <h3>OFICIAL</h3>
+              <div class="contenido_main--box--precios">
+                <div class="compra">
+                  <h4>COMPRA</h4>
+                  <p>3123123</p>
+                </div>
+                <div class="venta">
+                  <h4>VENTA</h4>
+                  <p>3123123</p>
+                </div>
+              </div>
+            </div>
+            <div class="contenido_main--box--card">
+              <h3>OFICIAL</h3>
+              <div class="contenido_main--box--precios">
+                <div class="compra">
+                  <h4>COMPRA</h4>
+                  <p>3123123</p>
+                </div>
+                <div class="venta">
+                  <h4>VENTA</h4>
+                  <p>3123123</p>
+                </div>
+              </div>
+            </div>
+            <div class="contenido_main--box--card">
+              <h3>OFICIAL</h3>
+              <div class="contenido_main--box--precios">
+                <div class="compra">
+                  <h4>COMPRA</h4>
+                  <p>3123123</p>
+                </div>
+                <div class="venta">
+                  <h4>VENTA</h4>
+                  <p>3123123</p>
+                </div>
+              </div>
+            </div>
+            <div class="contenido_main--box--card">
+              <h3>OFICIAL</h3>
+              <div class="contenido_main--box--precios">
+                <div class="compra">
+                  <h4>COMPRA</h4>
+                  <p>3123123</p>
+                </div>
+                <div class="venta">
+                  <h4>VENTA</h4>
+                  <p>3123123</p>
+                </div>
+              </div>
+            </div>
+            <div class="contenido_main--box--card">
+              <h3>OFICIAL</h3>
+              <div class="contenido_main--box--precios">
+                <div class="compra">
+                  <h4>COMPRA</h4>
+                  <p>3123123</p>
+                </div>
+                <div class="venta">
+                  <h4>VENTA</h4>
+                  <p>3123123</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
         </div>
       </main>
       <footer>
@@ -121,7 +208,9 @@
             <p>1TUP7 - 2024</p>
           </div>
         </div>
-        <p id="detalleMateria">TUP - Cátedra de Laboratorio de Computación 2 - Año 2024</p>
+        <p id="detalleMateria">
+          TUP - Cátedra de Laboratorio de Computación 2 - Año 2024
+        </p>
       </footer>
     </div>
   </body>

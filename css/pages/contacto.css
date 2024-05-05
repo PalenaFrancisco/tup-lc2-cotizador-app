@@ -1,0 +1,29 @@
+.contenido_main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto-grow;
+    grid-template-areas: 
+    "titulo titulo"
+    "form consulta"
+    "form consulta"
+    ;
+}
+
+.contenido_main--titulo{
+    grid-area: titulo;
+}
+.contenido_main--form {
+    grid-area: form;
+}
+.contenido_main--consulta {
+    grid-area: consulta;
+}
+
+.contenido_main--form form{
+    background-color: #f2f2f2;
+    padding: 12px;
+}
+.contenido_main--form form div input, .contenido_main--form form div textarea{
+    border: 1px solid gray;
+    outline: none;
+}
