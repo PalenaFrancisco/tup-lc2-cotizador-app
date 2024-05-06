@@ -24,8 +24,8 @@ li{
   max-width: 1300px;
   grid-template-rows: 150px auto 250px;
   min-height: 100vh;
-  gap: 8px;
-  padding: 8px;
+  gap: 12px;
+  padding: 12px;
   border: solid 2px black;
 }
 
@@ -58,6 +58,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .contenedor_header {

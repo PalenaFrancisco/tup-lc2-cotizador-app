@@ -1,29 +1,78 @@
 .contenido_main{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.contenido_main--container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto auto-grow;
-    grid-template-areas: 
-    "titulo titulo"
-    "form consulta"
-    "form consulta"
-    ;
+    gap: 16px;
 }
-
-.contenido_main--titulo{
-    grid-area: titulo;
+@media screen and (max-width: 920px) {
+    .contenido_main--container{
+        grid-template-columns: 1fr;
+    }
 }
-.contenido_main--form {
-    grid-area: form;
-}
-.contenido_main--consulta {
-    grid-area: consulta;
-}
-
 .contenido_main--form form{
     background-color: #f2f2f2;
-    padding: 12px;
+    border-radius: 28px 80px 28px 80px;
+    padding: 32px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
-.contenido_main--form form div input, .contenido_main--form form div textarea{
-    border: 1px solid gray;
+.contenido_main--form form input, .contenido_main--form form textarea{
+    min-height: 28px;
+    width: 80%;
+    border: 2px solid rgb(220, 220, 220);
+    margin-bottom: 16px;
+    padding: 8px;
+}
+.contenido_main--form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.contenido_main--form--btns{
+    align-self: flex-end;
+    display: flex;
+    gap: 12px;
+}
+.contenido_main--form button{
+    display: inline-block;
+    padding: 8px 20px;
+    color: white;
+    text-transform: uppercase;
     outline: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.limpiar{
+    background-color: #a5a5a5;
+}
+.enviar{
+    background-color: #00b050;
+}
+.contenido_main--consulta{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+    /* height: 100%; */
+}
+.contenido_main--info{
+    border: 1px solid rgba(200, 200, 200, 0.8);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 28px;
+    border-radius: 12px;
+}
+.contenido_main--info--datos, .contenido_main--info--logo{
+    flex: 1;
+}
+.contenido_main--info--logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
