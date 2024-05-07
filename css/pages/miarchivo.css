@@ -15,15 +15,15 @@ h2 {
   overflow: hidden;
   border-spacing: 0;
 }
-.tabla--mi_archivo tr th{
-  background-color: #dae2f3;
+.tabla--mi_archivo tr th {
+  /* background-color: #dae2f3; */
   padding: 12px 0;
 }
 .tabla--mi_archivo tr,
 .tabla--mi_archivo td {
   border: solid 1px grey;
 }
-.tabla--mi_archivo td{
+.tabla--mi_archivo td {
   padding: 8px;
 }
 
@@ -31,6 +31,15 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.icono {
+  font-size: 20px;
+}
+
+.icono:hover {
+  color: red;
+  cursor: pointer;
 }
 
 .fecha_tabla {
@@ -46,13 +55,14 @@ h2 {
   padding: 24px;
   border-radius: 36px;
   gap: 12px;
-  overflow: auto;
+  overflow-y: auto;
   max-height: 640px;
   position: relative;
 }
-.tabla--mi_archivo thead{
+
+.tabla--mi_archivo thead {
   position: sticky;
   top: 0;
-  top: -24px;
   left: 0;
+  background-color: #dae2f3;
 }
