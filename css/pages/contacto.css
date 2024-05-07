@@ -1,4 +1,4 @@
-.contenido_main{
+.contenido_main--contacto{
     display: flex;
     flex-direction: column;
     gap: 24px;

@@ -67,7 +67,7 @@ header {
   justify-content: center;
   width: 100%;
   height: 100%;
-  backdrop-filter: brightness(.75);
+  backdrop-filter: brightness(.65);
 }
 
 header .contenedor_header .texto-cabecera {
@@ -148,7 +148,7 @@ section {
 }
 
 .elementos-section ul li:hover {
-  background-color: grey;
+  background-color: rgb(174, 174, 174);
   font-weight: bold;
 }
 
