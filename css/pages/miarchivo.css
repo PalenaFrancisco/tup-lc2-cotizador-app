@@ -1,3 +1,32 @@
-h2{
-    text-align: center;
+h2 {
+  text-align: center;
+}
+
+.tabla--mi_archivo {
+  border: solid 1px black;
+  border-radius: 16px;
+  border-collapse: collapse;
+}
+
+.tabla--mi_archivo tr,
+.tabla--mi_archivo td {
+  border: solid 1px grey;
+}
+
+.precios_tabla {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fecha_tabla {
+  background-color: grey;
+}
+
+.contenido_main {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px black;
+  justify-content: center;
+  padding: 12px;
 }

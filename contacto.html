@@ -1,183 +1,164 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/df53a93159.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/pages/contacto.css" />
-    <title>Cotizador de Monedas Web</title>
-  </head>
 
-  <body>
-    <div class="contenedor_padre">
-      <header>
-        <div class="contenedor_header">
-          <span><img src="img/dolar.png" alt="Icono dolar" /></span>
-          <div class="texto-cabecera">Cotizador de Monedas</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://kit.fontawesome.com/df53a93159.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/common.css" />
+  <link rel="stylesheet" href="./css/pages/contacto.css" />
+  <title>Cotizador de Monedas Web</title>
+</head>
+
+<body>
+  <div class="contenedor_padre">
+    <header>
+      <div class="contenedor_header">
+        <span><img src="img/dolar.png" alt="Icono dolar" /></span>
+        <div class="texto-cabecera">Cotizador de Monedas</div>
+      </div>
+    </header>
+    <section>
+      <div class="elementos-section">
+        <navbar>
+          <ul>
+            <li>
+              <i class="fa-solid fa-house"></i><a href="./index.html">Inicio</a>
+            </li>
+            <li>
+              <i class="fa-regular fa-folder-open"></i><a href="./miarchivo.html">Mi Archivo</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-inbox"></i><a href="./informes.html">Informes</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i><a href="./contacto.html">Contactenos</a>
+            </li>
+          </ul>
+        </navbar>
+        <div class="users">
+          <div class="users-image">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/78.jpg" alt="Thumbnail" />
+          </div>
+          <div class="users-content">
+            <h4>Mario Massonnat</h4>
+            <p>
+              Esto es muy malo se tilda todo, inverti 1000 dolares y perdi
+              todo, garcas!!
+            </p>
+          </div>
         </div>
-      </header>
-      <section>
-        <div class="elementos-section">
-          <navbar>
-            <ul>
-              <li>
-                <i class="fa-solid fa-house"></i
-                ><a href="./index.html">Inicio</a>
-              </li>
-              <li>
-                <i class="fa-regular fa-folder-open"></i
-                ><a href="./miarchivo.html">Mi Archivo</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-inbox"></i
-                ><a href="./informes.html">Informes</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-phone"></i
-                ><a href="./contacto.html">Contactenos</a>
-              </li>
-            </ul>
-          </navbar>
-          <div class="users">
-            <div class="users-image">
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/78.jpg"
-                alt="Thumbnail"
-              />
+        <div class="users">
+          <div class="users-image">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/78.jpg" alt="Thumbnail" />
+          </div>
+          <div class="users-content">
+            <h4>Maximo Martin</h4>
+            <p>Me queme todo aca malditos!!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <main>
+      <div class="migas_pan">
+        Usted está aquí: <a href="./index.html">Inicio</a> / Contacto
+      </div>
+      <div class="contenido_main">
+        <h2 class="contenido_main--titulo">Contacto Web Cotizaciones</h2>
+
+        <div class="contenido_main--container">
+          <div class="contenido_main--form">
+            <form action="" method="post">
+              <h3>DATO DE CONTACTO</h3>
+              <table>
+                <tr>
+                  <td><label for="nombre">Nombre:</label></td>
+                  <td><input type="text" name="nombre" id="nombre" /></td>
+                </tr>
+                <tr>
+                  <td><label for="email">Email:</label></td>
+                  <td><input type="email" name="email" id="email" /></td>
+                </tr>
+                <tr>
+                  <td><label for="mensaje">Mensaje:</label></td>
+                  <td>
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+                  </td>
+                </tr>
+              </table>
+            </form>
+            <div class="contenido_main--form--btns">
+              <button class="limpiar">Limpiar</button>
+              <button class="enviar">Enviar</button>
             </div>
-            <div class="users-content">
-              <h4>Mario Massonnat</h4>
+          </div>
+
+          <div class="contenido_main--consulta">
+            <div>
               <p>
-                Esto es muy malo se tilda todo, inverti 1000 dolares y perdi
-                todo, garcas!!
+                Si tiene alguna sugerencia o inconveniente por favor complete el
+                siguiente formulario y envíelo. Lo contactaremos a la brevedad.
               </p>
+              <br />
+              <p>Esta web está desarrollada utilizando (poner el link)</p>
             </div>
-          </div>
-          <div class="users">
-            <div class="users-image">
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/78.jpg"
-                alt="Thumbnail"
-              />
-            </div>
-            <div class="users-content">
-              <h4>Maximo Martin</h4>
-              <p>Me queme todo aca malditos!!</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <main>
-        <div class="migas_pan">
-          Usted está aquí: <a href="./index.html">Inicio</a> / Contacto
-        </div>
-        <div class="contenido_main">
-          <h2 class="contenido_main--titulo">Contacto Web Cotizaciones</h2>
 
-          <div class="contenido_main--container">
-            <div class="contenido_main--form">
-              <form action="" method="post">
-                <h3>DATO DE CONTACTO</h3>
-                <table>
-                  <tr>
-                    <td><label for="nombre">Nombre:</label></td>
-                    <td><input type="text" name="nombre" id="nombre" /></td>
-                  </tr>
-                  <tr>
-                    <td><label for="email">Email:</label></td>
-                    <td><input type="email" name="email" id="email" /></td>
-                  </tr>
-                  <tr>
-                    <td><label for="mensaje">Mensaje:</label></td>
-                    <td>
-                      <textarea
-                        name="mensaje"
-                        id="mensaje"
-                        cols="30"
-                        rows="10"
-                      ></textarea>
-                    </td>
-                  </tr>
-                </table>
-              </form>
-              <div class="contenido_main--form--btns">
-                <button class="limpiar">Limpiar</button>
-                <button class="enviar">Enviar</button>
+            <div class="contenido_main--info">
+              <div class="contenido_main--info--datos">
+                <h3>DATOS DE CONTACTO</h3>
+                <p>Universidad Tecnológica Nacional</p>
+                <p>ZEBALLOS 1341 - S2000BQA- ROSARIO</p>
+                <p>0341 - 4481871</p>
               </div>
-            </div>
-
-            <div class="contenido_main--consulta">
-              <div>
-                <p>
-                  Si tiene alguna sugerencia o inconveniente por favor complete el
-                  siguiente formulario y envíelo. Lo contactaremos a la brevedad.
-                </p>
-                <br />
-                <p>Esta web está desarrollada utilizando (poner el link)</p>
-              </div>
-
-              <div class="contenido_main--info">
-                <div class="contenido_main--info--datos">
-                  <h3>DATOS DE CONTACTO</h3>
-                  <p>Universidad Tecnológica Nacional</p>
-                  <p>ZEBALLOS 1341 - S2000BQA- ROSARIO</p>
-                  <p>0341 - 4481871</p>
-                </div>
-                <div class="contenido_main--info--logo">
-                  <img src="./img/logo-utn-siglas.png" alt="Logo UTN" />
-                </div>
+              <div class="contenido_main--info--logo">
+                <img src="./img/logo-utn-siglas.png" alt="Logo UTN" />
               </div>
             </div>
           </div>
         </div>
-      </main>
-      <footer>
-        <div class="footerContainer">
-          <div class="footerContainerCaja">
-            <h4>INSTITUCIONAL</h4>
-            <ul class="footerContainerLista">
-              <li>><a href="#">¿Quiénes somos?</a></li>
-              <li>><a href="#">Socios Estrategicos</a></li>
-              <li>><a href="#">Trabaje con Nosotros</a></li>
-              <li>><a href="#">Ayuda</a></li>
-            </ul>
-          </div>
-          <div class="footerContainerCaja">
-            <h4>ACCESOS</h4>
-            <ul class="footerContainerLista">
-              <li>><a href="#">Inicio</a></li>
-              <li>><a href="#">Mi Archivo</a></li>
-              <li>><a href="#">Informes</a></li>
-              <li>><a href="#">Contactenos</a></li>
-            </ul>
-          </div>
-          <div class="footerContainerCaja">
-            <h4>CONTACTO</h4>
-            <p>Universidad Tecnológica Nacional</p>
-            <p>ZEBALLOS 1341- S2000BQA- ROSARIO</p>
-            <p>0341-4481871</p>
-            <p id="contactoEscribanos">¡Escribanos!</p>
-          </div>
-          <div class="footerContainerCaja autores">
-            <h4>Desarrollado por</h4>
-            <p>Maximo Martin (53386)</p>
-            <p>Mario Massonnat (53368)</p>
-            <p>Francisco Palena (legajoPale)</p>
-            <p>1TUP7 - 2024</p>
-          </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footerContainer">
+        <div class="footerContainerCaja">
+          <h4>INSTITUCIONAL</h4>
+          <ul class="footerContainerLista">
+            <li>><a href="#">¿Quiénes somos?</a></li>
+            <li>><a href="#">Socios Estrategicos</a></li>
+            <li>><a href="#">Trabaje con Nosotros</a></li>
+            <li>><a href="#">Ayuda</a></li>
+          </ul>
         </div>
-        <p id="detalleMateria">
-          TUP - Cátedra de Laboratorio de Computación 2 - Año 2024
-        </p>
-      </footer>
-    </div>
-  </body>
+        <div class="footerContainerCaja">
+          <h4>ACCESOS</h4>
+          <ul class="footerContainerLista">
+            <li>><a href="#">Inicio</a></li>
+            <li>><a href="#">Mi Archivo</a></li>
+            <li>><a href="#">Informes</a></li>
+            <li>><a href="#">Contactenos</a></li>
+          </ul>
+        </div>
+        <div class="footerContainerCaja">
+          <h4>CONTACTO</h4>
+          <p>Universidad Tecnológica Nacional</p>
+          <p>ZEBALLOS 1341- S2000BQA- ROSARIO</p>
+          <p>0341-4481871</p>
+          <p id="contactoEscribanos">¡Escribanos!</p>
+        </div>
+        <div class="footerContainerCaja autores">
+          <h4>Desarrollado por</h4>
+          <p>Maximo Martin (53386)</p>
+          <p>Mario Massonnat (53368)</p>
+          <p>Francisco Palena (53340)</p>
+          <p>1TUP7 - 2024</p>
+        </div>
+      </div>
+      <p id="detalleMateria">
+        TUP - Cátedra de Laboratorio de Computación 2 - Año 2024
+      </p>
+    </footer>
+  </div>
+</body>
+
 </html>
