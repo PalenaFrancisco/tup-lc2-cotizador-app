@@ -39,7 +39,7 @@
   border-radius: 32px 80px 32px 80px;
   padding: 32px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 824px) {
   .contenido_main--box.grid {
     grid-template-columns: 1fr;
   }
@@ -66,6 +66,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 /* Apartado boton estrella*/

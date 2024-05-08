@@ -57,8 +57,9 @@
 .contenido_main--consulta{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 20px;
+    padding-bottom: 47px;
     /* height: 100%; */
 }
 .contenido_main--info{

@@ -130,6 +130,7 @@ section {
   border-radius: 50%;
   height: 120px;
   width: 120px;
+  object-fit: cover;
 }
 
 .elementos-section ul {
@@ -230,4 +231,15 @@ footer {
 #detalleMateria{
   align-self: center;
   font-style: italic;
+}
+
+html::-webkit-scrollbar {
+  width: 12px;
+  background-color: grey;
+  border-radius: 16px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #213768;
+  border-radius: 16px;
 }
