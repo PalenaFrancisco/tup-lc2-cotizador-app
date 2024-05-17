@@ -1,0 +1,65 @@
+.contenido_main {
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-selector {
+  grid-area: selector;
+  height: 200px;
+}
+
+.container-grafico {
+  grid-area: grafico;
+  height: 320px;
+}
+
+.container-compartir {
+  grid-area: compartir;
+  height: 64px;
+}
+
+.container-tabla {
+  grid-area: tabla;
+  height: 300px;
+}
+
+.contenedor_main--informes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "selector grafico"
+    "compartir grafico"
+    "tabla tabla";
+  gap: 10px;
+  background-color: #2196f3;
+  padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .contenedor_main--informes {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "selector"
+      "compartir"
+      "grafico"
+      "tabla";
+  }
+
+  .container-selector {
+    height: 110px;
+  }
+  .container-compartir {
+    height: 30px;
+  }
+  .container-grafico {
+    height: 250px;
+  }
+}
+
+.contenedor_main--informes > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
