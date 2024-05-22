@@ -20,7 +20,7 @@
 }
 
 .contenido_main--box i {
-  font-size: 34px;
+  font-size: 30px;
   padding: 8px;
   margin-left: 10px;
   color: rgb(56, 56, 56);
@@ -29,7 +29,7 @@
 #moneda {
   padding: 4px;
   background-color: #fff;
-  margin-left: 4px;
+  margin-left: 20px;
 }
 .contenido_main--box.grid {
   display: grid;
@@ -43,7 +43,18 @@
   .contenido_main--box.grid {
     grid-template-columns: 1fr;
   }
+
+  .contenido_main--box {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
+
+.selector-icono {
+  display: flex;
+  align-items: center;
+}
+
 .contenido_main--box--card {
   display: flex;
   justify-content: space-between;

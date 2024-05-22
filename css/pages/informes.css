@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
 .contenido_main {
   gap: 24px;
   display: flex;
@@ -6,22 +12,78 @@
 
 .container-selector {
   grid-area: selector;
-  height: 200px;
+  font-size: 16px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 36px;
+}
+
+.container-selector label {
+  padding: 0 0 3px 0;
+  text-align: start;
+}
+
+.selector-icono {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 4px;
+}
+
+.selector-icono i {
+  font-size: 25px;
+}
+
+.selector-icono select {
+  min-width: 40px;
+  margin-left: 8px;
 }
 
 .container-grafico {
   grid-area: grafico;
-  height: 320px;
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.container-grafico h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.container-grafico img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 20px;
 }
 
 .container-compartir {
   grid-area: compartir;
-  height: 64px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.icono-compartir i {
+  font-size: 30px;
+  padding-right: 2px;
+}
+
+.icono-compartir {
+  display: flex;
+  align-items: center;
 }
 
 .container-tabla {
   grid-area: tabla;
-  height: 300px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .contenedor_main--informes {
@@ -47,19 +109,11 @@
   }
 
   .container-selector {
-    height: 110px;
-  }
-  .container-compartir {
-    height: 30px;
-  }
-  .container-grafico {
-    height: 250px;
+    flex-direction: column;
   }
 }
 
 .contenedor_main--informes > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
+  border-radius: 20px;
+  padding: 16px;
 }
