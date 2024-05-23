@@ -178,7 +178,7 @@
   position: relative;
 }
 
-#modal{
+#modal {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -194,7 +194,7 @@
   /* PARA VER EL MODAL SACAR EL DISPLAY NONE */
   display: none;
 }
-#modal form{
+#modal form {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -202,11 +202,11 @@
 #modal form input {
   padding: 8px 4px;
 }
-.modal__btns{
+.modal__btns {
   align-self: flex-end;
   margin-top: 16px;
 }
-.modal__btns button{
+.modal__btns button {
   padding: 8px 28px;
   border-radius: 16px;
   outline: none;
@@ -215,10 +215,10 @@
   font-weight: bold;
   cursor: pointer;
 }
-.modal__btns button:first-child{
+.modal__btns button:first-child {
   background-color: rgb(180, 180, 180);
 }
-.modal__btns button:last-child{
+.modal__btns button:last-child {
   background-color: #00b050;
 }
 @media screen and (max-width: 768px) {
@@ -230,10 +230,4 @@
       "grafico"
       "tabla";
   }
-
-  .container-selector {
-    flex-direction: column;
-  }
 }
-
-

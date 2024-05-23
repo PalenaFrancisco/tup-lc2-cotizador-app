@@ -79,3 +79,10 @@ h2 {
   position: relative;
   margin: 16px;
 }
+
+@media screen and (max-width: 768px) {
+  .contenido_main--mi_archivo {
+    padding: 0;
+    margin: 0;
+  }
+}
