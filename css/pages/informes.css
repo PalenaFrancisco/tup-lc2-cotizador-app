@@ -160,7 +160,10 @@
   background-color: #ededed;
   color: #4b6aa3;
 }
-
+.contenedor_main--informes > div {
+  border-radius: 20px;
+  padding: 16px;
+}
 .contenedor_main--informes {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -172,8 +175,52 @@
   background-color: #2195f387;
   padding: 10px;
   border-radius: 20px;
+  position: relative;
 }
 
+#modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fee599;
+  padding: 32px 56px;
+  z-index: 100;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* PARA VER EL MODAL SACAR EL DISPLAY NONE */
+  display: none;
+}
+#modal form{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#modal form input {
+  padding: 8px 4px;
+}
+.modal__btns{
+  align-self: flex-end;
+  margin-top: 16px;
+}
+.modal__btns button{
+  padding: 8px 28px;
+  border-radius: 16px;
+  outline: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modal__btns button:first-child{
+  background-color: rgb(180, 180, 180);
+}
+.modal__btns button:last-child{
+  background-color: #00b050;
+}
 @media screen and (max-width: 768px) {
   .contenedor_main--informes {
     grid-template-columns: 1fr;
@@ -189,7 +236,4 @@
   }
 }
 
-.contenedor_main--informes > div {
-  border-radius: 20px;
-  padding: 16px;
-}
+
