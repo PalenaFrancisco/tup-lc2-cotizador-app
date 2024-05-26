@@ -8,9 +8,10 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    /* background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
     background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-    background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
+    background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%); */
+    background-color: #FEFFEA;
 }
 li{
   list-style: none;
@@ -28,7 +29,7 @@ li{
   grid-template-rows: 150px auto 250px;
   min-height: 100vh;
   gap: 12px;
-  padding: 12px;
+  /* padding: 12px; */
 }
 
 @media screen and (max-width: 768px) {
@@ -53,7 +54,7 @@ footer {
 header {
   width: 100%;
   text-align: center;
-  background-image: url("/img/1.jpg");
+  background-image: url("../img/1.jpg");
   background-size: cover;
   background-position: right 50% bottom 25%;
   grid-area: header;
@@ -104,11 +105,13 @@ main .contenido_main {
 
 main .migas_pan {
   align-self: flex-end;
+  padding-right: 8px;
 }
 
 section {
   grid-area: section;
-  background-color: #bdd7ee;
+  background-color: #f8f6fe;
+  border: solid 2px #dae2f3;
   padding: 40px 16px;
 }
 
@@ -173,7 +176,8 @@ section ul li {
 
 footer {
   grid-area: footer;
-  background-color: #fee599;
+  background-color: #f8f6fe;
+  border: solid 2px #dae2f3;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

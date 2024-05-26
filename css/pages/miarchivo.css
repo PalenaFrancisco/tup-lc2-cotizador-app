@@ -36,7 +36,7 @@ h2 {
 }
 
 .table-wrapper tr th {
-  background-color: #dae2f3;
+  background-color: #C9C9C9;
   padding: 12px 0;
 }
 .table-wrapper tr,
@@ -78,6 +78,7 @@ h2 {
   max-height: 640px;
   position: relative;
   margin: 16px;
+  background-color: #f8f6fe;
 }
 
 @media screen and (max-width: 768px) {

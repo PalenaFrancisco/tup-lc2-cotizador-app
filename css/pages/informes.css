@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 24px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(128, 128, 128, 0.461);
   margin: auto;
   /* margin: 36px; */
 }
@@ -74,8 +74,12 @@
 .icono-compartir {
   display: flex;
   align-items: center;
+  gap: 4px;
 }
 
+.icono-compartir a {
+  color: rgb(128, 128, 128);
+}
 .container-tabla {
   grid-area: tabla;
   background-color: rgba(255, 255, 255, 0.8);
@@ -121,7 +125,7 @@
 }
 
 .table-wrapper tr th {
-  background-color: #dae2f3;
+  background-color: #f8f6fe;
   padding: 12px 0;
 }
 .table-wrapper tr,
@@ -167,7 +171,8 @@
     "compartir grafico"
     "tabla tabla";
   gap: 12px;
-  background-color: #2195f387;
+  background-color: #f8f6fe;
+  border: solid 2px #dae2f3;
   padding: 12px;
   border-radius: 16px;
   position: relative;
