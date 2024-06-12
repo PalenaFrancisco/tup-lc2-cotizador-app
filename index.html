@@ -73,148 +73,27 @@
           <div class="selector-icono">
             <select name="moneda" id="moneda">
               <option value="" selected disabled></option>
-              <option value="">Todas</option>
-              <option value="/oficial">Dólar oficial</option>
-              <option value="/blue">Dólar Blue</option>
-              <option value="/bolsa">Dólar Bolsa (MEP)</option>
-              <option value="/contadoconliqui">
+              <option value="dolares">Todas</option>
+              <option value="dolares/oficial">Dólar oficial</option>
+              <option value="dolares/blue">Dólar Blue</option>
+              <option value="dolares/bolsa">Dólar Bolsa (MEP)</option>
+              <option value="dolares/contadoconliqui">
                 Dólar Contado con Liqui (CCL)
               </option>
-              <option value="/tarjeta">Dólar Tarjeta</option>
-              <option value="/mayorista">Dólar Mayorista</option>
-              <option value="/cripto">Dólar Cripto</option>
-              <option value="/eur">Euro</option>
-              <option value="/brl">Real Brasileño</option>
-              <option value="/clp">Peso Chileno</option>
-              <option value="/uyu">Peso Urguayo</option>
+              <option value="dolares/tarjeta">Dólar Tarjeta</option>
+              <option value="dolares/mayorista">Dólar Mayorista</option>
+              <option value="dolares/cripto">Dólar Cripto</option>
+              <option value="cotizaciones/eur">Euro</option>
+              <option value="cotizaciones/brl">Real Brasileño</option>
+              <option value="cotizaciones/clp">Peso Chileno</option>
+              <option value="cotizaciones/uyu">Peso Urguayo</option>
             </select>
             <i class="fa-solid fa-filter"></i>
           </div>
         </div>
 
         <div class="contenido_main--box grid" id="ver-moneda">
-          <!-- <div class="contenido_main--box--card">
-            <h3>OFICIAL</h3>
-            <div class="contenido_main--box--precios">
-              <div class="compra">
-                <h4>COMPRA</h4>
-                <p>$847</p>
-              </div>
-              <div class="venta">
-                <h4>VENTA</h4>
-                <p>$887</p>
-              </div>
-              <input type="checkbox" id="starCheckbox1" class="starCheckbox">
-              <label for="starCheckbox1" class="starCheckboxLabel"></label>
-            </div>
-          </div>
-          <div class="contenido_main--box--card">
-            <h3>BLUE</h3>
-            <div class="contenido_main--box--precios">
-              <div class="compra">
-                <h4>COMPRA</h4>
-                <p>$995</p>
-              </div>
-              <div class="venta">
-                <h4>VENTA</h4>
-                <p>$1015</p>
-              </div>
-              <input type="checkbox" id="starCheckbox2" class="starCheckbox">
-              <label for="starCheckbox2" class="starCheckboxLabel"></label>
-            </div>
-          </div>
-          <div class="contenido_main--box--card">
-            <h3>TARJETA</h3>
-            <div class="contenido_main--box--precios">
-              <div class="compra">
-                <h4>COMPRA</h4>
-                <p>$1355.2</p>
-              </div>
-              <div class="venta">
-                <h4>VENTA</h4>
-                <p>$1419.2</p>
-              </div>
-              <input type="checkbox" id="starCheckbox3" class="starCheckbox">
-              <label for="starCheckbox3" class="starCheckboxLabel"></label>
-            </div>
-          </div>
-          <div class="contenido_main--box--card">
-            <h3>TARJETA</h3>
-            <div class="contenido_main--box--precios">
-              <div class="compra">
-                <h4>COMPRA</h4>
-                <p>$1355.2</p>
-              </div>
-              <div class="venta">
-                <h4>VENTA</h4>
-                <p>$1419.2</p>
-              </div>
-              <input type="checkbox" id="starCheckbox4" class="starCheckbox">
-              <label for="starCheckbox4" class="starCheckboxLabel"></label>
-            </div>
-          </div>
-          <div class="contenido_main--box--card">
-            <h3>TARJETA</h3>
-            <div class="contenido_main--box--precios">
-              <div class="compra">
-                <h4>COMPRA</h4>
-                <p>$1355.2</p>
-              </div>
-              <div class="venta">
-                <h4>VENTA</h4>
-                <p>$1419.2</p>
-              </div>
-              <input type="checkbox" id="starCheckbox5" class="starCheckbox">
-              <label for="starCheckbox5" class="starCheckboxLabel"></label>
-            </div>
-          </div>
-          <div class="contenido_main--box--card">
-            <h3>TARJETA</h3>
-            <div class="contenido_main--box--precios">
-              <div class="compra">
-                <h4>COMPRA</h4>
-                <p>$1355.2</p>
-              </div>
-              <div class="venta">
-                <h4>VENTA</h4>
-                <p>$1419.2</p>
-              </div>
-              <input type="checkbox" id="starCheckbox6" class="starCheckbox">
-              <label for="starCheckbox6" class="starCheckboxLabel"></label>
-            </div>
-          </div>
-          <div class="contenido_main--box--card">
-            <h3>TARJETA</h3>
-            <div class="contenido_main--box--precios">
-              <div class="compra">
-                <h4>COMPRA</h4>
-                <p>$1355.2</p>
-              </div>
-              <div class="venta">
-                <h4>VENTA</h4>
-                <p>$1419.2</p>
-              </div>
-              <input type="checkbox" id="starCheckbox7" class="starCheckbox">
-              <label for="starCheckbox7" class="starCheckboxLabel"></label>
-            </div>
-          </div>
-          <div class="contenido_main--box--card">
-            <h3>TARJETA</h3>
-            <div class="contenido_main--box--precios">
-              <div class="compra">
-                <h4>COMPRA</h4>
-                <p>$1355.2</p>
-              </div>
-              <div class="venta">
-                <h4>VENTA</h4>
-                <p>$1419.2</p>
-              </div>
-              <input type="checkbox" id="starCheckbox8" class="starCheckbox">
-              <label for="starCheckbox8" class="starCheckboxLabel"></label>
-            </div>
-          </div>
-
-        </div> -->
+         
 
       </div>
     </main>
