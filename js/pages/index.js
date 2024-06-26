@@ -1,17 +1,30 @@
 const padre = document.querySelector("#ver-moneda");
 const selectorMoneda = document.getElementById("moneda");
 const favoritosBtns = document.querySelectorAll(".starCheckbox");
-let listaFavoritos = [];
-let monedas;
-const API = "https://dolarapi.com/v1/dolares";
+let listaFavoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+let monedas = [];
+// const API = "https://dolarapi.com/v1/dolares";
 
-window.addEventListener("load", renderMonedas);
+const endpoints = {
+  oficial: "https://dolarapi.com/v1/dolares/oficial",
+  blue: "https://dolarapi.com/v1/dolares/blue",
+  bolsa: "https://dolarapi.com/v1/dolares/bolsa",
+  contadoconliqui: "https://dolarapi.com/v1/dolares/contadoconliqui",
+  tarjeta: "https://dolarapi.com/v1/dolares/tarjeta",
+  mayorista: "https://dolarapi.com/v1/dolares/mayorista",
+  cripto: "https://dolarapi.com/v1/dolares/cripto",
+  eur: "https://dolarapi.com/v1/cotizaciones/eur",
+  brl: "https://dolarapi.com/v1/cotizaciones/brl",
+  clp: "https://dolarapi.com/v1/cotizaciones/clp",
+  uyu: "https://dolarapi.com/v1/cotizaciones/uyu"
+};
 
-async function llamadaAPI() {
+window.addEventListener("load", () => renderMonedas(endpoints));
+
+async function llamadaAPI(endpoints) {
   try {
-    const response = await fetch(API);
+    const response = await fetch(endpoints);
     const data = await response.json();
-    monedas = data;
     return data;
   } catch (error) {
     console.error("Error:", error);
@@ -19,18 +32,22 @@ async function llamadaAPI() {
   }
 }
 
-async function renderMonedas() {
-  const monedas = await llamadaAPI();
-  document.getElementById("actualizacion").innerHTML =
-    "Fecha de la cotización: " + formatearFecha(monedas[0].fechaActualizacion);
-  padre.innerHTML = "";
-  if (monedas.length > 1) {
-    for (let i = 0; i < monedas.length; i++) {
-      armarHTML(monedas[i]);
-    }
-  } else {
-    armarHTML(monedas);
+async function renderMonedas(endpoints) {
+  // document.getElementById("actualizacion").innerHTML = "Fecha de la cotización: " + formatearFecha(monedas[0].fechaActualizacion);
+
+  for (const url of Object.values(endpoints)) {
+    const monedita = await llamadaAPI(url);
+    monedas.push(monedita)
+    armarHTML(monedita)
   }
+  // padre.innerHTML = "";
+  // if (monedas.length > 1) {
+  //   for (let i = 0; i < monedas.length; i++) {
+  //     armarHTML(monedas[i]);
+  //   }
+  // } else {
+  //   armarHTML(monedas);
+  // }
 }
 
 function formatearFecha(fecha) {
@@ -62,7 +79,7 @@ function armarHTML(moneda) {
       </div>
       <input type="checkbox"
             id="starCheckbox-${moneda.nombre}" 
-            data-casa=${moneda.casa} 
+            data-nombre=${moneda.nombre} 
             data-compra=${moneda.compra} 
             data-venta=${moneda.venta} 
             data-fecha=${moneda.fechaActualizacion} 
@@ -84,7 +101,7 @@ selectorMoneda.addEventListener("change", (event) => {
     }
   } else {
     for (const moneda of monedas) {
-      if (monedaElegida == moneda.casa) {
+      if (monedaElegida == moneda.nombre) {
         armarHTML(moneda);
       }
     }
@@ -93,7 +110,7 @@ selectorMoneda.addEventListener("change", (event) => {
 
 function agregarAlStorage(e) {
   const favorito = {
-    nombre: e.dataset.casa,
+    nombre: e.dataset.nombre,
     compra: e.dataset.compra,
     venta: e.dataset.venta,
     fechaActualizacion: e.dataset.fecha,

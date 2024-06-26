@@ -1,9 +1,8 @@
 const tbody = document.getElementById("tbody-miarchivo");
-
-// Recuperar y parsear los datos del localStorage
-const storage = JSON.parse(localStorage.getItem("favoritos"));
+let nuevoStorage = [];
 
 function armarMoneda() {
+  const storage = JSON.parse(localStorage.getItem("favoritos"));
   if (storage) {
     const agrupado = {};
 
@@ -24,26 +23,29 @@ function armarMoneda() {
         venta: moneda.venta,
       });
     }
+
     const resultado = Object.values(agrupado);
     return resultado;
   }
 }
 
-const cotizacionesAgrupadas = armarMoneda();
+function renderArchivo() {
+  const cotizacionesAgrupadas = armarMoneda();
+  tbody.innerHTML = "";
 
-if (cotizacionesAgrupadas) {
-  for (const cotizacion of cotizacionesAgrupadas) {
-    tbody.innerHTML += `
-        <tr class="fecha_tabla">
-        <td colspan="5">${cotizacion.fechaActualizacion}</td>
-        </tr>
-        <tr>
-        <td></td>
-        <td>
-        <ul>
-        ${cotizacion.monedas
-          .map((element) => `<li>${element.moneda.toUpperCase()}</li>`)
-          .join("")}
+  if (cotizacionesAgrupadas.length > 0) {
+    for (const cotizacion of cotizacionesAgrupadas) {
+      tbody.innerHTML += `
+      <tr class="fecha_tabla" style="height: 1rem;">
+      <td colspan="5">${cotizacion.fechaActualizacion}</td>
+      </tr>
+      <tr>
+      <td></td>
+      <td>
+      <ul>
+      ${cotizacion.monedas
+        .map((element) => `<li>${element.moneda.toUpperCase()}</li>`)
+        .join("")}
         </ul>
         </td>
         <td>
@@ -51,25 +53,48 @@ if (cotizacionesAgrupadas) {
         ${cotizacion.monedas
           .map((element) => `<li>$${element.compra}</li>`)
           .join("")}
-        </ul>
-        </td>
-        <td>
-        <ul class="precios_tabla">
-        ${cotizacion.monedas
-          .map((element) => `<li>$${element.venta}</li>`)
-          .join("")}
-        </ul>
-        </td>
-        <td>
-        <ul class="precios_tabla">
-        ${cotizacion.monedas
-          .map((element) => `<li><i class="fa-solid fa-eraser icono"></i></li>`)
-          .join("")}
-        </ul>
-        </td>
-        </tr> 
-        `;
+          </ul>
+          </td>
+          <td>
+          <ul class="precios_tabla">
+          ${cotizacion.monedas
+            .map((element) => `<li>$${element.venta}</li>`)
+            .join("")}
+            </ul>
+            </td>
+            <td>
+            <ul class="precios_tabla">
+            ${cotizacion.monedas
+              .map(
+                (element) =>
+                  `<li><i class="fa-solid fa-eraser icono" ></i></li>`
+              )
+              .join("")}
+              </ul>
+              </td>
+              </tr> 
+              `;
+      asignarListener();
+    }
+  } else {
+    document.querySelector(
+      ".table-wrapper"
+    ).innerHTML = `<p style="font-size: 2rem; margin: auto;">No hay cotizaciones</p>`;
   }
-} else {
-  document.querySelector(".table-wrapper").innerHTML = `<p style="font-size: 2rem; margin: auto;">No hay cotizaciones</p>`;
 }
+
+function asignarListener() {
+  const btns = document.querySelectorAll(".icono");
+  const storage = JSON.parse(localStorage.getItem("favoritos"));
+
+  btns.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      nuevoStorage = storage.filter((elem) => elem !== storage[index]);
+      localStorage.setItem("favoritos", JSON.stringify(nuevoStorage));
+      renderArchivo();
+    });
+  });
+}
+
+renderArchivo();
+asignarListener();
