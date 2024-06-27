@@ -221,6 +221,32 @@
 .modal__btns button:last-child {
   background-color: #00b050;
 }
+
+.wrapper-imprimir {
+  display: flex;
+  justify-content: space-between;
+}
+
+.imprimir {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.imprimir button {
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.imprimir i {
+  font-size: 20px;
+  padding-right: 4px;
+}
+
 @media screen and (max-width: 768px) {
   .contenedor_main--informes {
     grid-template-columns: 1fr;
@@ -233,5 +259,8 @@
   .table-wrapper table {
     font-size: 12px;
   }
-  
+
+  .imprimir {
+    padding-left: 4px;
+  }
 }
