@@ -97,7 +97,11 @@
   color: rgba(63, 51, 230, 0.4);
 }
 
+.starCheckboxLabel:hover:before {
+  color: rgb(63, 51, 230);
+  /* content: "★"; */
+}
 .starCheckbox:checked + .starCheckboxLabel::before {
   color: rgb(63, 51, 230);
-  content: "★";
+  /* content: "★"; */
 }
