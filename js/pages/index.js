@@ -48,7 +48,7 @@ async function renderMonedas(endpoints) {
       }
     }
   }
-  
+
 }
 
 function formatearFecha(fecha) {
@@ -112,13 +112,13 @@ selectorMoneda.addEventListener("change", (event) => {
 function agregarAlStorage(e) {
   let bandera = true;
 
-  for (const fav of segmento()[segmento().length - 1].monedas) {
-    if (e.dataset.nombre == fav.moneda) {
-      bandera = false;
-    }
-  }
-  
-  if(bandera){
+  // for (const fav of segmento()[segmento().length - 1].monedas) {
+  //   if (e.dataset.nombre == fav.moneda) {
+  //     bandera = false;
+  //   }
+  // }
+
+  if (bandera) {
     const favorito = {
       nombre: e.dataset.nombre,
       compra: e.dataset.compra,

@@ -1,357 +1,354 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/df53a93159.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/pages/informes.css" />
-    <script src="./js/pages/informes.js" defer></script>
-    <title>Cotizador de Monedas Web</title>
-  </head>
 
-  <body>
-    <div class="contenedor_padre">
-      <header>
-        <div class="contenedor_header">
-          <span><img src="img/dolar.png" alt="Icono dolar" /></span>
-          <div class="texto-cabecera">Cotizador de Monedas</div>
-        </div>
-      </header>
-      <section>
-        <div class="elementos-section">
-          <navbar>
-            <ul>
-              <li>
-                <i class="fa-solid fa-house"></i
-                ><a href="./index.html">Inicio</a>
-              </li>
-              <li>
-                <i class="fa-regular fa-folder-open"></i
-                ><a href="./miarchivo.html">Mi Archivo</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-inbox"></i
-                ><a href="./informes.html">Informes</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-phone"></i
-                ><a href="./contacto.html">Contactenos</a>
-              </li>
-            </ul>
-          </navbar>
-          <div class="users">
-            <div class="users-image">
-              <img src="./img/mario.jpg" alt="Thumbnail" />
-            </div>
-            <div class="users-content">
-              <h4>Mario Massonnat</h4>
-              <p>
-                Esto es muy malo se tilda todo, inverti 1000 dolares y perdi
-                todo, garcas!!
-              </p>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://kit.fontawesome.com/df53a93159.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/pages/informes.css" />
+  <script src="./js/pages/informes.js" defer></script>
+  <title>Cotizador de Monedas Web</title>
+</head>
+
+<body>
+  <div class="contenedor_padre">
+    <header>
+      <div class="contenedor_header">
+        <span><img src="img/dolar.png" alt="Icono dolar" /></span>
+        <div class="texto-cabecera">Cotizador de Monedas</div>
+      </div>
+    </header>
+    <section>
+      <div class="elementos-section">
+        <navbar>
+          <ul>
+            <li>
+              <i class="fa-solid fa-house"></i><a href="./index.html">Inicio</a>
+            </li>
+            <li>
+              <i class="fa-regular fa-folder-open"></i><a href="./miarchivo.html">Mi Archivo</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-inbox"></i><a href="./informes.html">Informes</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i><a href="./contacto.html">Contactenos</a>
+            </li>
+          </ul>
+        </navbar>
+        <div class="users">
+          <div class="users-image">
+            <img src="./img/mario.jpg" alt="Thumbnail" />
           </div>
-          <div class="users">
-            <div class="users-image">
-              <img src="./img/maxi.jpeg" alt="Thumbnail" />
-            </div>
-            <div class="users-content">
-              <h4>Maximo Martin</h4>
-              <p>Me queme todo aca malditos!!</p>
-            </div>
+          <div class="users-content">
+            <h4>Mario Massonnat</h4>
+            <p>
+              Esto es muy malo se tilda todo, inverti 1000 dolares y perdi
+              todo, garcas!!
+            </p>
           </div>
         </div>
-      </section>
-      <main>
+        <div class="users">
+          <div class="users-image">
+            <img src="./img/maxi.jpeg" alt="Thumbnail" />
+          </div>
+          <div class="users-content">
+            <h4>Maximo Martin</h4>
+            <p>Me queme todo aca malditos!!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <main>
+      <div class="wrapper-imprimir">
+        <div class="imprimir" onclick="window.print();">
+          <i class="fa-solid fa-print"></i>
+          <button>Imprimir</button>
+        </div>
         <div class="migas_pan">
           Usted está aquí: <a href="./index.html">Inicio</a> / Informes
         </div>
-        <div class="contenido_main">
-          <div class="contenedor_main--informes">
+      </div>
+      <div class="contenido_main">
+        <div class="contenedor_main--informes">
+          <div id="modal">
+            <h3>DATOS DEL DESTINATARIO</h3>
+            <form action="">
+              <label for="nombre">Nombre:</label>
+              <input type="text" name="nombre" id="nombre">
 
-            <div id="modal">
-              <h3>DATOS DEL DESTINATARIO</h3>
-              <form action="">
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre">
+              <label for="email">Email:</label>
+              <input type="email" name="email" id="email">
+              <div class="modal__btns">
+                <button class="modal__btn">CERRAR</button>
+                <button class="modal__btn">ENVIAR</button>
+              </div>
+            </form>
+          </div>
 
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email">
-                <div class="modal__btns">
-                  <button class="modal__btn">CERRAR</button>
-                  <button class="modal__btn">ENVIAR</button>
-                </div>
-              </form>
+          <div class="container-selector">
+            <label for="moneda">Seleccione una moneda:</label>
+            <div class="selector-icono">
+              <select name="moneda" id="moneda">
+                <option value="" selected disabled></option>
+                <option value="TODAS">Todas</option>
+                <option value="Dolar oficial">Dólar oficial</option>
+                <option value="Dolar Blue">Dólar Blue</option>
+                <option value="Dolar Bolsa (MEP)">Dólar Bolsa (MEP)</option>
+                <option value="Dolar Contado con Liqui (CCL)">
+                  Dólar Contado con Liqui (CCL)
+                </option>
+                <option value="Dolar Tarjeta">Dólar Tarjeta</option>
+                <option value="Dolar Mayorista">Dólar Mayorista</option>
+                <option value="Dolar Cripto">Dólar Cripto</option>
+                <option value="Euro">Euro</option>
+                <option value="Real Brasileño">Real Brasileño</option>
+                <option value="Peso Chileno">Peso Chileno</option>
+                <option value="Peso Urguayo">Peso Urguayo</option>
+              </select>
+              <i class="fa-solid fa-filter"></i>
             </div>
-
-            <div class="container-selector">
-              <label for="moneda">Seleccione una moneda:</label>
-              <div class="selector-icono">
-                <select name="moneda" id="moneda">
-                  <option value="" selected disabled></option>
-                  <option value="TODAS">Todas</option>
-                  <option value="Dolar oficial">Dólar oficial</option>
-                  <option value="Dolar Blue">Dólar Blue</option>
-                  <option value="Dolar Bolsa (MEP)">Dólar Bolsa (MEP)</option>
-                  <option value="Dolar Contado con Liqui (CCL)">
-                    Dólar Contado con Liqui (CCL)
-                  </option>
-                  <option value="Dolar Tarjeta">Dólar Tarjeta</option>
-                  <option value="Dolar Mayorista">Dólar Mayorista</option>
-                  <option value="Dolar Cripto">Dólar Cripto</option>
-                  <option value="Euro">Euro</option>
-                  <option value="Real Brasileño">Real Brasileño</option>
-                  <option value="Peso Chileno">Peso Chileno</option>
-                  <option value="Peso Urguayo">Peso Urguayo</option>
-                </select>
-                <i class="fa-solid fa-filter"></i>
-              </div>
+          </div>
+          <div class="container-grafico">
+            <h3>Informe</h3>
+            <img src="img/grafico-merval.png" alt="grafico" />
+          </div>
+          <div class="container-compartir">
+            <div class="icono-compartir">
+              <i class="fa-solid fa-envelope-open-text"></i>
+              <a href="#">Compartir informacion</a>
             </div>
-            <div class="container-grafico">
-              <h3>Informe</h3>
-              <img src="img/grafico-merval.png" alt="grafico" />
-            </div>
-            <div class="container-compartir">
-              <div class="icono-compartir">
-                <i class="fa-solid fa-envelope-open-text"></i>
-                <a href="#">Compartir informacion</a>
-              </div>
-            </div>
-            <div class="container-tabla">
-              <div class="table-wrapper">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>MONEDA</th>
-                      <th>FECHA</th>
-                      <th>COMPRA</th>
-                      <th>VENTA</th>
-                      <th>VARIACION</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="monedaSelect">
-                      <td colspan="5">Dolar Blue</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>
-                        <ul>
-                          <li>18/04/2024</li>
-                          <li>17/04/2024</li>
-                          <li>16/04/2024</li>
-                          <li>15/04/2024</li>
-                          <li>14/04/2024</li>
-                        </ul>
-                      </td>
-                      <td>
-                        <ul class="precios_tabla">
-                          <li>$995</li>
-                          <li>$996.09</li>
-                          <li>$1355.2</li>
-                          <li>$1050</li>
-                          <li>$1000</li>
-                        </ul>
-                      </td>
-                      <td>
-                        <ul class="precios_tabla">
-                          <li>$1015</li>
-                          <li>$1000.06</li>
-                          <li>$1419.2</li>
-                          <li>$1086</li>
-                          <li>$1200</li>
-                        </ul>
-                      </td>
-                      <td>
-                        <ul class="precios_tabla">
-                          <li><i class="fa-solid fa-up-long iconoup"></i></li>
-                          <li><i class="fa-solid fa-down-long iconolower"></i></li>
-                          <li><i class="fa-solid fa-up-long iconoup"></i></li>
-                          <li><i class="fa-solid fa-up-long iconolower"></i></li>
-                          <li><i class="fa-solid fa-down-long iconoup"></i></li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr class="monedaSelect">
-                      <td colspan="5">Dolar Bolsa</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>
-                        <ul>
-                          <li>18/04/2024</li>
-                          <li>17/04/2024</li>
-                          <li>16/04/2024</li>
-                          <li>15/04/2024</li>
-                          <li>14/04/2024</li>
-                        </ul>
-                      </td>
-                      <td>
-                        <ul class="precios_tabla">
-                          <li>$995</li>
-                          <li>$996.09</li>
-                          <li>$1355.2</li>
-                          <li>$1050</li>
-                          <li>$1000</li>
-                        </ul>
-                      </td>
-                      <td>
-                        <ul class="precios_tabla">
-                          <li>$1015</li>
-                          <li>$1000.06</li>
-                          <li>$1419.2</li>
-                          <li>$1086</li>
-                          <li>$1200</li>
-                        </ul>
-                      </td>
-                      <td>
-                        <ul class="precios_tabla">
-                          <li><i class="fa-solid fa-up-long iconoup"></i></li>
-                          <li><i class="fa-solid fa-down-long iconolower"></i></li>
-                          <li><i class="fa-solid fa-up-long iconoup"></i></li>
-                          <li><i class="fa-solid fa-up-long iconoup"></i></li>
-                          <li><i class="fa-solid fa-down-long iconolower"></i></li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr class="monedaSelect">
-                      <td colspan="5">Dolar Cripto</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>
-                        <ul>
-                          <li>18/04/2024</li>
-                          <li>17/04/2024</li>
-                          <li>16/04/2024</li>
-                          <li>15/04/2024</li>
-                          <li>14/04/2024</li>
-                        </ul>
-                      </td>
-                      <td>
-                        <ul class="precios_tabla">
-                          <li>$995</li>
-                          <li>$996.09</li>
-                          <li>$1355.2</li>
-                          <li>$1050</li>
-                          <li>$1000</li>
-                        </ul>
-                      </td>
-                      <td>
-                        <ul class="precios_tabla">
-                          <li>$1015</li>
-                          <li>$1000.06</li>
-                          <li>$1419.2</li>
-                          <li>$1086</li>
-                          <li>$1200</li>
-                        </ul>
-                      </td>
-                      <td>
-                        <ul class="precios_tabla">
-                          <li><i class="fa-solid fa-up-long iconoup"></i></li>
-                          <li><i class="fa-solid fa-down-long iconolower"></i></li>
-                          <li><i class="fa-solid fa-up-long iconoup"></i></li>
-                          <li><i class="fa-solid fa-up-long iconoup"></i></li>
-                          <li><i class="fa-solid fa-down-long iconolower"></i></li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr class="monedaSelect">
-                      <td colspan="5">Dolar Oficial</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>
-                        <ul>
-                          <li>18/04/2024</li>
-                          <li>17/04/2024</li>
-                          <li>16/04/2024</li>
-                          <li>15/04/2024</li>
-                          <li>14/04/2024</li>
-                        </ul>
-                      </td>
-                      <td>
-                        <ul class="precios_tabla">
-                          <li>$995</li>
-                          <li>$996.09</li>
-                          <li>$1355.2</li>
-                          <li>$1050</li>
-                          <li>$1000</li>
-                        </ul>
-                      </td>
-                      <td>
-                        <ul class="precios_tabla">
-                          <li>$1015</li>
-                          <li>$1000.06</li>
-                          <li>$1419.2</li>
-                          <li>$1086</li>
-                          <li>$1200</li>
-                        </ul>
-                      </td>
-                      <td>
-                        <ul class="precios_tabla">
-                          <li><i class="fa-solid fa-up-long iconoup" ></i></li>
-                          <li><i class="fa-solid fa-down-long iconolower"></i></li>
-                          <li><i class="fa-solid fa-up-long iconoup"></i></li>
-                          <li><i class="fa-solid fa-up-long iconoup"></i></li>
-                          <li><i class="fa-solid fa-down-long iconolower"></i></li>
-                        </ul>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+          </div>
+          <div class="container-tabla">
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>MONEDA</th>
+                    <th>FECHA</th>
+                    <th>COMPRA</th>
+                    <th>VENTA</th>
+                    <th>VARIACION</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="monedaSelect">
+                    <td colspan="5">Dolar Blue</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <ul>
+                        <li>18/04/2024</li>
+                        <li>17/04/2024</li>
+                        <li>16/04/2024</li>
+                        <li>15/04/2024</li>
+                        <li>14/04/2024</li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="precios_tabla">
+                        <li>$995</li>
+                        <li>$996.09</li>
+                        <li>$1355.2</li>
+                        <li>$1050</li>
+                        <li>$1000</li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="precios_tabla">
+                        <li>$1015</li>
+                        <li>$1000.06</li>
+                        <li>$1419.2</li>
+                        <li>$1086</li>
+                        <li>$1200</li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="precios_tabla">
+                        <li><i class="fa-solid fa-up-long iconoup"></i></li>
+                        <li><i class="fa-solid fa-down-long iconolower"></i></li>
+                        <li><i class="fa-solid fa-up-long iconoup"></i></li>
+                        <li><i class="fa-solid fa-up-long iconolower"></i></li>
+                        <li><i class="fa-solid fa-down-long iconoup"></i></li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr class="monedaSelect">
+                    <td colspan="5">Dolar Bolsa</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <ul>
+                        <li>18/04/2024</li>
+                        <li>17/04/2024</li>
+                        <li>16/04/2024</li>
+                        <li>15/04/2024</li>
+                        <li>14/04/2024</li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="precios_tabla">
+                        <li>$995</li>
+                        <li>$996.09</li>
+                        <li>$1355.2</li>
+                        <li>$1050</li>
+                        <li>$1000</li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="precios_tabla">
+                        <li>$1015</li>
+                        <li>$1000.06</li>
+                        <li>$1419.2</li>
+                        <li>$1086</li>
+                        <li>$1200</li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="precios_tabla">
+                        <li><i class="fa-solid fa-up-long iconoup"></i></li>
+                        <li><i class="fa-solid fa-down-long iconolower"></i></li>
+                        <li><i class="fa-solid fa-up-long iconoup"></i></li>
+                        <li><i class="fa-solid fa-up-long iconoup"></i></li>
+                        <li><i class="fa-solid fa-down-long iconolower"></i></li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr class="monedaSelect">
+                    <td colspan="5">Dolar Cripto</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <ul>
+                        <li>18/04/2024</li>
+                        <li>17/04/2024</li>
+                        <li>16/04/2024</li>
+                        <li>15/04/2024</li>
+                        <li>14/04/2024</li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="precios_tabla">
+                        <li>$995</li>
+                        <li>$996.09</li>
+                        <li>$1355.2</li>
+                        <li>$1050</li>
+                        <li>$1000</li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="precios_tabla">
+                        <li>$1015</li>
+                        <li>$1000.06</li>
+                        <li>$1419.2</li>
+                        <li>$1086</li>
+                        <li>$1200</li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="precios_tabla">
+                        <li><i class="fa-solid fa-up-long iconoup"></i></li>
+                        <li><i class="fa-solid fa-down-long iconolower"></i></li>
+                        <li><i class="fa-solid fa-up-long iconoup"></i></li>
+                        <li><i class="fa-solid fa-up-long iconoup"></i></li>
+                        <li><i class="fa-solid fa-down-long iconolower"></i></li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr class="monedaSelect">
+                    <td colspan="5">Dolar Oficial</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <ul>
+                        <li>18/04/2024</li>
+                        <li>17/04/2024</li>
+                        <li>16/04/2024</li>
+                        <li>15/04/2024</li>
+                        <li>14/04/2024</li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="precios_tabla">
+                        <li>$995</li>
+                        <li>$996.09</li>
+                        <li>$1355.2</li>
+                        <li>$1050</li>
+                        <li>$1000</li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="precios_tabla">
+                        <li>$1015</li>
+                        <li>$1000.06</li>
+                        <li>$1419.2</li>
+                        <li>$1086</li>
+                        <li>$1200</li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="precios_tabla">
+                        <li><i class="fa-solid fa-up-long iconoup"></i></li>
+                        <li><i class="fa-solid fa-down-long iconolower"></i></li>
+                        <li><i class="fa-solid fa-up-long iconoup"></i></li>
+                        <li><i class="fa-solid fa-up-long iconoup"></i></li>
+                        <li><i class="fa-solid fa-down-long iconolower"></i></li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
-      </main>
-      <footer>
-        <div class="footerContainer">
-          <div class="footerContainerCaja">
-            <h4>INSTITUCIONAL</h4>
-            <ul class="footerContainerLista">
-              <li>><a href="#">¿Quiénes somos?</a></li>
-              <li>><a href="#">Socios Estrategicos</a></li>
-              <li>><a href="#">Trabaje con Nosotros</a></li>
-              <li>><a href="#">Ayuda</a></li>
-            </ul>
-          </div>
-          <div class="footerContainerCaja">
-            <h4>ACCESOS</h4>
-            <ul class="footerContainerLista">
-              <li>><a href="./index.html">Inicio</a></li>
-              <li>><a href="./miarchivo.html">Mi Archivo</a></li>
-              <li>><a href="./informes.html">Informes</a></li>
-              <li>><a href="./contacto.html">Contáctenos</a></li>
-            </ul>
-          </div>
-          <div class="footerContainerCaja">
-            <h4>CONTACTO</h4>
-            <p>Universidad Tecnológica Nacional</p>
-            <p>ZEBALLOS 1341- S2000BQA- ROSARIO</p>
-            <p><a href="tel:+543414481871">0341-4481871</a></p>
-            <a href="./contacto.html" id="contactoEscribanos">¡Escríbanos!</a>
-          </div>
-          <div class="footerContainerCaja autores">
-            <h4>Desarrollado por</h4>
-            <p>Maximo Martin (53386)</p>
-            <p>Mario Massonnat (53368)</p>
-            <p>Francisco Palena (53340)</p>
-            <p>1TUP7 - 2024</p>
-          </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footerContainer">
+        <div class="footerContainerCaja">
+          <h4>INSTITUCIONAL</h4>
+          <ul class="footerContainerLista">
+            <li>><a href="#">¿Quiénes somos?</a></li>
+            <li>><a href="#">Socios Estrategicos</a></li>
+            <li>><a href="#">Trabaje con Nosotros</a></li>
+            <li>><a href="#">Ayuda</a></li>
+          </ul>
         </div>
-        <p id="detalleMateria">
-          TUP - Cátedra de Laboratorio de Computación 2 - Año 2024
-        </p>
-      </footer>
-    </div>
-  </body>
+        <div class="footerContainerCaja">
+          <h4>ACCESOS</h4>
+          <ul class="footerContainerLista">
+            <li>><a href="./index.html">Inicio</a></li>
+            <li>><a href="./miarchivo.html">Mi Archivo</a></li>
+            <li>><a href="./informes.html">Informes</a></li>
+            <li>><a href="./contacto.html">Contáctenos</a></li>
+          </ul>
+        </div>
+        <div class="footerContainerCaja">
+          <h4>CONTACTO</h4>
+          <p>Universidad Tecnológica Nacional</p>
+          <p>ZEBALLOS 1341- S2000BQA- ROSARIO</p>
+          <p><a href="tel:+543414481871">0341-4481871</a></p>
+          <a href="./contacto.html" id="contactoEscribanos">¡Escríbanos!</a>
+        </div>
+        <div class="footerContainerCaja autores">
+          <h4>Desarrollado por</h4>
+          <p>Maximo Martin (53386)</p>
+          <p>Mario Massonnat (53368)</p>
+          <p>Francisco Palena (53340)</p>
+          <p>1TUP7 - 2024</p>
+        </div>
+      </div>
+      <p id="detalleMateria">
+        TUP - Cátedra de Laboratorio de Computación 2 - Año 2024
+      </p>
+    </footer>
+  </div>
+</body>
+
 </html>
