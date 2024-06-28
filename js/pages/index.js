@@ -3,20 +3,8 @@ const selectorMoneda = document.getElementById("moneda");
 const favoritosBtns = document.querySelectorAll(".starCheckbox");
 let listaFavoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 let monedas = [];
-
-const endpoints = {
-  oficial: "https://dolarapi.com/v1/dolares/oficial",
-  blue: "https://dolarapi.com/v1/dolares/blue",
-  bolsa: "https://dolarapi.com/v1/dolares/bolsa",
-  contadoconliqui: "https://dolarapi.com/v1/dolares/contadoconliqui",
-  tarjeta: "https://dolarapi.com/v1/dolares/tarjeta",
-  mayorista: "https://dolarapi.com/v1/dolares/mayorista",
-  cripto: "https://dolarapi.com/v1/dolares/cripto",
-  eur: "https://dolarapi.com/v1/cotizaciones/eur",
-  brl: "https://dolarapi.com/v1/cotizaciones/brl",
-  clp: "https://dolarapi.com/v1/cotizaciones/clp",
-  uyu: "https://dolarapi.com/v1/cotizaciones/uyu",
-};
+// import { endpoints } from "../common.js"
+import { endpoints } from "../common.js";
 
 window.addEventListener("load", () => renderMonedas(endpoints));
 

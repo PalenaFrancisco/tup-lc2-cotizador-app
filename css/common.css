@@ -8,12 +8,12 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    /* background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+  /* background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
     background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
     background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%); */
-    background-color: #FEFFEA;
+  background-color: #feffea;
 }
-li{
+li {
   list-style: none;
 }
 
@@ -22,11 +22,12 @@ li{
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
     "header header header header"
+    "slider slider slider slider"
     "section main main main"
     "footer footer footer footer";
   margin: 0 auto;
   max-width: 1300px;
-  grid-template-rows: 150px auto 250px;
+  grid-template-rows: 150px 50px auto 250px;
   min-height: 100vh;
   gap: 12px;
   /* padding: 12px; */
@@ -35,9 +36,10 @@ li{
 @media screen and (max-width: 768px) {
   .contenedor_padre {
     grid-template-columns: 1fr;
-    grid-template-rows: 150px auto auto auto;
+    grid-template-rows: 150px 50px auto auto auto;
     grid-template-areas:
       "header"
+      "slider"
       "section"
       "main"
       "footer";
@@ -70,7 +72,7 @@ header {
   justify-content: center;
   width: 100%;
   height: 100%;
-  backdrop-filter: brightness(.65);
+  backdrop-filter: brightness(0.65);
 }
 
 header .contenedor_header .texto-cabecera {
@@ -185,7 +187,7 @@ footer {
   gap: 16px;
 }
 
-.footerContainer{
+.footerContainer {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -195,7 +197,7 @@ footer {
   gap: 16px;
 }
 @media screen and (max-width: 768px) {
-  .footerContainer{
+  .footerContainer {
     grid-template-columns: 1fr;
   }
 }
@@ -205,13 +207,14 @@ footer {
   flex-direction: column;
 }
 
-.footerContainerLista{
+.footerContainerLista {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.footerContainerLista li a, .footerContainerCaja p a {
+.footerContainerLista li a,
+.footerContainerCaja p a {
   color: #000;
 }
 
@@ -233,7 +236,7 @@ footer {
   align-items: flex-end;
   align-self: flex-end;
 }
-#detalleMateria{
+#detalleMateria {
   align-self: center;
   font-style: italic;
 }
@@ -247,4 +250,57 @@ html::-webkit-scrollbar {
 html::-webkit-scrollbar-thumb {
   background-color: #213768;
   border-radius: 16px;
+}
+
+.slider {
+  grid-area: slider;
+  width: 100%;
+  /* border: 1px solid red; */
+  background-color: #000000a2;
+  color: #dae2f3;
+  height: var(--height);
+  display: flex;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 10%,
+    #000 90%,
+    transparent
+  );
+}
+
+.slider .list {
+  display: flex;
+  width: 100%;
+  min-width: calc(var(--width) * var(--quantity));
+  position: relative;
+}
+
+.slider .list .moneda--card {
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  left: 100%;
+  animation: autoRun 13s linear infinite;
+  animation-delay: calc((13s / var(--quantity)) * (var(--position) - 1));
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.moneda--card--info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+@keyframes autoRun {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--width) * -1);
+  }
 }
