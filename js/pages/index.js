@@ -3,8 +3,20 @@ const selectorMoneda = document.getElementById("moneda");
 const favoritosBtns = document.querySelectorAll(".starCheckbox");
 let listaFavoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 let monedas = [];
-// import { endpoints } from "../common.js"
-import { endpoints } from "../common.js";
+
+const endpoints = {
+  oficial: "https://dolarapi.com/v1/dolares/oficial",
+  blue: "https://dolarapi.com/v1/dolares/blue",
+  bolsa: "https://dolarapi.com/v1/dolares/bolsa",
+  contadoconliqui: "https://dolarapi.com/v1/dolares/contadoconliqui",
+  tarjeta: "https://dolarapi.com/v1/dolares/tarjeta",
+  mayorista: "https://dolarapi.com/v1/dolares/mayorista",
+  cripto: "https://dolarapi.com/v1/dolares/cripto",
+  eur: "https://dolarapi.com/v1/cotizaciones/eur",
+  brl: "https://dolarapi.com/v1/cotizaciones/brl",
+  clp: "https://dolarapi.com/v1/cotizaciones/clp",
+  uyu: "https://dolarapi.com/v1/cotizaciones/uyu",
+};
 
 window.addEventListener("load", () => renderMonedas(endpoints));
 
@@ -28,15 +40,16 @@ async function renderMonedas(endpoints) {
     armarHTML(monedita);
   }
 
-  const kirikocho = document.querySelectorAll(".contenido_main--box--card");
-  for (const k of kirikocho) {
-    for (const fav of listaFavoritos) {
-      if (k.children[0].textContent == fav.nombre) {
-        k.children[1].children[2].checked = true;
+  if (listaFavoritos.length > 0) {
+    const kirikocho = document.querySelectorAll(".contenido_main--box--card");
+    for (const k of kirikocho) {
+      for (const fav of segmento()[segmento().length - 1].monedas) {
+        if (k.children[0].textContent == fav.moneda) {
+          k.children[1].children[2].checked = true;
+        }
       }
     }
   }
-
 }
 
 function formatearFecha(fecha) {
@@ -92,13 +105,14 @@ selectorMoneda.addEventListener("change", (event) => {
     for (const moneda of monedas) {
       if (monedaElegida == moneda.nombre) {
         armarHTML(moneda);
+        break;
       }
     }
   }
 });
 
 function agregarAlStorage(e) {
-  let bandera = true;
+  // let bandera = true;
 
   // for (const fav of segmento()[segmento().length - 1].monedas) {
   //   if (e.dataset.nombre == fav.moneda) {
@@ -106,7 +120,9 @@ function agregarAlStorage(e) {
   //   }
   // }
 
-  if (bandera) {
+  // if(bandera){
+  // }
+  if (e.checked == true) {
     const favorito = {
       nombre: e.dataset.nombre,
       compra: e.dataset.compra,
@@ -114,6 +130,8 @@ function agregarAlStorage(e) {
       fechaActualizacion: e.dataset.fecha,
     };
     setearStorage(favorito);
+  } else {
+    console.log("hola");
   }
 }
 
@@ -127,17 +145,13 @@ function segmento() {
     const agrupado = {};
 
     for (const moneda of listaFavoritos) {
-      const fecha = new Date(moneda.fechaActualizacion).toLocaleDateString(
-        "es-ES"
-      );
-
-      if (!agrupado[fecha]) {
-        agrupado[fecha] = {
-          fechaActualizacion: fecha,
+      if (!agrupado[moneda.fechaActualizacion]) {
+        agrupado[moneda.fechaActualizacion] = {
+          fechaActualizacion: moneda.fechaActualizacion,
           monedas: [],
         };
       }
-      agrupado[fecha].monedas.push({
+      agrupado[moneda.fechaActualizacion].monedas.push({
         moneda: moneda.nombre,
         compra: moneda.compra,
         venta: moneda.venta,
@@ -148,6 +162,7 @@ function segmento() {
     return resultado;
   }
 }
+
 
 // setInterval(() => {
 //   renderMonedas();
