@@ -235,7 +235,7 @@
   }
 }
 
-.wrapper-imprimir {
+/* .wrapper-imprimir {
   display: flex;
   justify-content: space-between;
 }
@@ -254,7 +254,7 @@
 /* .imprimir:hover {
   background-color: black;
   color: white;
-} */
+} 
 
 .imprimir button {
   background-color: transparent;
@@ -272,4 +272,4 @@
 .imprimir:hover {
   background-color: #f0f0f0;
   color: #56616d;
-}
+}*/

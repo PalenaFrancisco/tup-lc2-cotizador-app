@@ -36,7 +36,7 @@ h2 {
 }
 
 .table-wrapper tr th {
-  background-color: #C9C9C9;
+  background-color: #c9c9c9;
   padding: 12px 0;
 }
 .table-wrapper tr,
@@ -86,4 +86,38 @@ h2 {
     padding: 0;
     margin: 0;
   }
+}
+
+.wrapper-imprimir {
+  display: flex;
+  justify-content: space-between;
+}
+
+.imprimir {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border: 2px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  gap: 4px;
+}
+
+.imprimir button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.imprimir {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.imprimir:hover {
+  background-color: #f0f0f0;
+  color: #56616d;
 }

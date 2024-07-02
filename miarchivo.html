@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="css/pages/miarchivo.css" />
   <!-- <script defer src="./js/pages/index.js"></script> -->
   <script defer src="./js/pages/miarchivo.js"></script>
-  <script defer src="./js/common.js"></script>
+  <script defer src="./js/common.js" type="module"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <title>Cotizador de Monedas Web</title>
 </head>
 
@@ -43,7 +44,36 @@
             </li>
           </ul>
         </navbar>
-        <div class="users">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="users">
+                <div class="users-image">
+                  <img src="./img/mario.jpg" alt="Thumbnail" />
+                </div>
+                <div class="users-content">
+                  <h4>Mario Massonnat</h4>
+                  <p>
+                    Esto es muy malo se tilda todo, inverti 1000 y perdi
+                    todo, garcas!!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="users">
+                <div class="users-image">
+                  <img src="./img/maxi.jpeg" alt="Thumbnail" />
+                </div>
+                <div class="users-content">
+                  <h4>Maximo Martin</h4>
+                  <p>Me queme todo aca malditos!!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="users">
           <div class="users-image">
             <img src="./img/mario.jpg" alt="Thumbnail" />
           </div>
@@ -63,12 +93,18 @@
             <h4>Maximo Martin</h4>
             <p>Me queme todo aca malditos!!</p>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <main>
-      <div class="migas_pan">
-        Usted está aquí: <a href="./index.html">Inicio</a> / Mi Archivo
+      <div class="wrapper-imprimir">
+        <div class="imprimir" onclick="window.print();">
+          <i class="fa-solid fa-print"></i>
+          <button>Imprimir</button>
+        </div>
+        <div class="migas_pan">
+          Usted está aquí: <a href="./index.html">Inicio</a> / Mi Archivo
+        </div>
       </div>
       <div class="contenido_main--mi_archivo">
         <h2>Mi Archivo</h2>

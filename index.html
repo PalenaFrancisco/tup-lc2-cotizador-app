@@ -8,7 +8,8 @@
   <script src="https://kit.fontawesome.com/df53a93159.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/common.css" />
   <link rel="stylesheet" href="css/pages/index.css" />
-  <script defer src="./js/common.js"></script>
+  <script defer src="./js/common.js" type="module"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <title>Cotizador de Monedas Web</title>
 </head>
 
@@ -41,7 +42,36 @@
             </li>
           </ul>
         </navbar>
-        <div class="users">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="users">
+                <div class="users-image">
+                  <img src="./img/mario.jpg" alt="Thumbnail" />
+                </div>
+                <div class="users-content">
+                  <h4>Mario Massonnat</h4>
+                  <p>
+                    Esto es muy malo se tilda todo, inverti 1000 y perdi
+                    todo, garcas!!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="users">
+                <div class="users-image">
+                  <img src="./img/maxi.jpeg" alt="Thumbnail" />
+                </div>
+                <div class="users-content">
+                  <h4>Maximo Martin</h4>
+                  <p>Me queme todo aca malditos!!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="users">
           <div class="users-image">
             <img src="./img/mario.jpg" alt="Thumbnail" />
           </div>
@@ -62,7 +92,7 @@
             <p>Me queme todo aca malditos!!</p>
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
     <main>
       <div class="migas_pan">
@@ -81,7 +111,7 @@
               <option value="Oficial">Dólar Oficial</option>
               <option value="Blue">Dólar Blue</option>
               <option value="Bolsa">Dólar Bolsa (MEP)</option>
-              <option value="Contado con Liquidacion">Dólar Contado con Liqui (CCL)</option>
+              <option value="Contado con liquidación">Dólar Contado con Liqui (CCL)</option>
               <option value="Tarjeta">Dólar Tarjeta</option>
               <option value="Mayorista">Dólar Mayorista</option>
               <option value="Cripto">Dólar Cripto</option>
@@ -141,6 +171,7 @@
     </footer>
   </div>
   <script src="./js/pages/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>
