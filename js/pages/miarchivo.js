@@ -44,8 +44,8 @@ function renderArchivo() {
       <td>
       <ul>
       ${cotizacion.monedas
-        .map((element) => `<li>${element.moneda.toUpperCase()}</li>`)
-        .join("")}
+          .map((element) => `<li>${element.moneda.toUpperCase()}</li>`)
+          .join("")}
         </ul>
         </td>
         <td>
@@ -58,18 +58,18 @@ function renderArchivo() {
           <td>
           <ul class="precios_tabla">
           ${cotizacion.monedas
-            .map((element) => `<li>$${element.venta}</li>`)
-            .join("")}
+          .map((element) => `<li>$${element.venta}</li>`)
+          .join("")}
             </ul>
             </td>
             <td>
             <ul class="precios_tabla">
             ${cotizacion.monedas
-              .map(
-                (element) =>
-                  `<li><i class="fa-solid fa-eraser icono" ></i></li>`
-              )
-              .join("")}
+          .map(
+            (element) =>
+              `<li><i class="fa-solid fa-eraser icono" ></i></li>`
+          )
+          .join("")}
               </ul>
               </td>
               </tr> 
@@ -95,6 +95,16 @@ function asignarListener() {
     });
   });
 }
+
+function imprimir() {
+  var cuerpo_tabla = document.querySelector(".table-wrapper").innerHTML;
+  var contenido_original = document.body.innerHTML;
+
+  document.body.innerHTML = cuerpo_tabla;
+  window.print();
+  document.body.innerHTML = contenido_original;
+}
+
 
 renderArchivo();
 asignarListener();

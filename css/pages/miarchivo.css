@@ -121,3 +121,43 @@ h2 {
   background-color: #f0f0f0;
   color: #56616d;
 }
+
+@media print {
+  body {
+    font-size: 12pt;
+  }
+
+  .contenedor_padre,
+  header,
+  .slider,
+  navbar,
+  .swiper,
+  .wrapper-imprimir,
+  footer {
+    display: none;
+  }
+
+  .contenido_main--mi_archivo {
+    display: block;
+  }
+
+  .table-wrapper {
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+}
