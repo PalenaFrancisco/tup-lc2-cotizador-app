@@ -1,5 +1,6 @@
 const storage = JSON.parse(localStorage.getItem("favoritos")) || [];
 const contenido_informe = document.getElementById("contenido-informe");
+const selector = document.getElementById("moneda")
 
 function datos() {
   if (storage) {
@@ -18,69 +19,104 @@ function datos() {
         venta: key.venta,
       });
 
-      // for (let i = 0; i < informe[key.nombre].datos.venta.length - 1; i++) {
-      //     if (informe[key.nombre].datos.venta[i] >= informe[key.nombre].datos.venta[i + 1]) {
-      //         console.log("subió wachin")
-      //     }
-      // }
+      informe[key.nombre].datos.sort(
+        (a, b) => new Date(b.fecha) - new Date(a.fecha)
+      );
     }
-    console.log(informe);
-    return informe;
+    const resultado = Object.values(informe);
+    console.log(resultado);
+    return resultado;
   }
 }
 
-datos();
+function agruparMonedas() {
+  const monedas = datos();
+  contenido_informe.innerHTML = "";
 
-// for (const [key, inf] of Object.entries(informe)) {
-//   //   inf.datos.fechas.sort((a, b) => new Date(b) - new Date(a));
-//   // inf.datos.fechas.map((fecha) => console.log(fecha));
-// }
+  if (monedas.length > 0) {
+    for (const moneda of monedas) {
+      armarHTML(moneda);
+    }
+  }
+}
 
-function armarHTML() {
-  const monedas = datos()
+selector.addEventListener("change", (event) => {
+  const monedaElegida = event.target.value;
+  contenido_informe.innerHTML = "";
+  const monedas = datos();
 
-  contenido_informe.innerHTML = `
-  <tr class="monedaSelect">
-        <td colspan="5">Dolar Blue</td>
+  if (monedaElegida == "all") {
+    for (const moneda of monedas) {
+      armarHTML(moneda);
+    }
+  } else {
+    for (const moneda of monedas) {
+      if (monedaElegida == moneda.nombre) {
+        armarHTML(moneda);
+        break;
+      }
+    }
+  }
+});
+
+function armarHTML(moneda) {
+  contenido_informe.innerHTML += `
+  <tr class="monedaSelect" style="height: 1rem;">
+        <td colspan="5">${moneda.nombre}</td>
           </tr>
           <tr>
             <td></td>
             <td>
               <ul>
-                <li>18/04/2024</li>
-                <li>17/04/2024</li>
-                <li>16/04/2024</li>
-                <li>15/04/2024</li>
-                <li>14/04/2024</li>
+                  ${moneda.datos
+                    .map(
+                      (element) =>
+                        `<li>${new Date(element.fecha).toLocaleDateString(
+                          "es-ES"
+                        )}</li>`
+                    )
+                    .join("")}
               </ul>
         </td>
         <td>
               <ul class="precios_tabla">
-                <li>$995</li>
-                <li>$996.09</li>
-                <li>$1355.2</li>
-                <li>$1050</li>
-                <li>$1000</li>
+              ${moneda.datos
+                .map((element) => `<li>$${element.compra}</li>`)
+                .join("")}
               </ul>
         </td>
         <td>
               <ul class="precios_tabla">
-                <li>$1015</li>
-                <li>$1000.06</li>
-                <li>$1419.2</li>
-                <li>$1086</li>
-                <li>$1200</li>
+              ${moneda.datos
+                .map((element) => `<li>$${element.venta}</li>`)
+                .join("")}
               </ul>
             </td>
             <td>
               <ul class="precios_tabla">
-                <li><i class="fa-solid fa-up-long iconoup"></i></li>
-                <li><i class="fa-solid fa-down-long iconolower"></i></li>
-                <li><i class="fa-solid fa-up-long iconoup"></i></li>
-                <li><i class="fa-solid fa-up-long iconolower"></i></li>
-                <li><i class="fa-solid fa-down-long iconoup"></i></li>
+                 ${moneda.datos
+                   .map((element, index, array) => {
+                     if (array.length <= 1) {
+                       return `-`;
+                     }
+                     if (index < array.length - 1) {
+                       const elemento_siguiente = array[index + 1];
+                       if (element.venta >= elemento_siguiente.venta) {
+                         return `<li><i class="fa-solid fa-up-long iconoup"></i></li>`;
+                       } else {
+                         return `<li><i class="fa-solid fa-down-long iconolower"></i></li>`;
+                       }
+                     } else {
+                       return `<li><i class="fa-solid fa-up-long iconoup"></i></li>`;
+                     }
+                   })
+                   .join("")}
               </ul>
             </td>
   </tr> 
   `;
 }
+
+
+
+agruparMonedas();
