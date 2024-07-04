@@ -4,6 +4,7 @@
 const storage = JSON.parse(localStorage.getItem("favoritos")) || [];
 const contenido_informe = document.getElementById("contenido-informe");
 const selector = document.getElementById("moneda");
+let chartInstance = null;
 
 function datos() {
   if (storage) {
@@ -193,16 +194,12 @@ function tomar_datos_tabla() {
   return [precios, lista_fechas];
 }
 
-
 // PARA MOSTRAR EL GRAFICO
-
 function render_grafico(precios = {}, lista_fechas = []) {
   if (!precios || !lista_fechas) {
     console.error("Valores inválidos para precios o lista_fechas");
     return;
   }
-
-  console.log(precios);
 
   const datasets = [];
   const colores = ["red", "blue", "green", "yellow", "orange", "pink", "purple", "turquoise", "black", "grey", "brown"];
@@ -236,7 +233,12 @@ function render_grafico(precios = {}, lista_fechas = []) {
   console.log(datasets);
 
   const ctx = document.getElementById("grafica").getContext("2d");
-  new Chart(ctx, {
+
+  if (chartInstance) {
+    chartInstance.destroy();
+  }
+
+  chartInstance = new Chart(ctx, {
     type: "line",
     data: {
       labels: lista_fechas,
@@ -258,6 +260,9 @@ function hideModal() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  agruparMonedas();
+  const [precios, lista_fechas] = tomar_datos_tabla();
+  render_grafico(precios, lista_fechas);
   const showModalButton = document.getElementById('showModalButton'); // Botón para mostrar el modal
   const hideModalButton = document.querySelector('.modal__btn_cerrar'); // Botón dentro del modal para cerrarlo
   const enviar = document.querySelector('.modal__btn_enviar'); //Boton de enviar dentro del modal
@@ -304,7 +309,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const modal_original = modal.innerHTML;
 
       emailjs.send(serviceID, templateID, templateParams)
-
         .then(function (response) {
           console.log('Correo electrónico enviado con éxito!', response);
           modal.innerHTML = ''
@@ -330,7 +334,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
-const [precios, lista_fechas] = tomar_datos_tabla();
-render_grafico(precios, lista_fechas);
-agruparMonedas();
