@@ -122,16 +122,18 @@ function agregarAlStorage(e) {
 
   // if(bandera){
   // }
-  if (e.checked == true) {
+  if (e.checked == false) {
+    let favoritos_filtrados = listaFavoritos.filter((element) => element.nombre != e.dataset.nombre && element.fechaActualizacion != e.dataset.fecha);
+    setearStorage(favoritos_filtrados);
+  } else {
     const favorito = {
       nombre: e.dataset.nombre,
       compra: e.dataset.compra,
       venta: e.dataset.venta,
       fechaActualizacion: e.dataset.fecha,
     };
-    setearStorage(favorito);
-  } else {
-    console.log("hola");
+    listaFavoritos.push(favorito);
+    setearStorage(listaFavoritos);
   }
 }
 
