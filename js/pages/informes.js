@@ -54,7 +54,7 @@ selector.addEventListener("change", (event) => {
       armarHTML(moneda);
     }
     const [precios, lista_fechas] = tomar_datos_tabla();
-    render_grafico(precios, lista_fechas);
+    render_grafico(precios, lista_fechas, true);
   } else {
     for (const moneda of monedas) {
       if (monedaElegida == moneda.nombre) {
@@ -195,7 +195,7 @@ function tomar_datos_tabla() {
 }
 
 // PARA MOSTRAR EL GRAFICO
-function render_grafico(precios = {}, lista_fechas = []) {
+function render_grafico(precios = {}, lista_fechas = [], mostrarSoloCompra = false) {
   if (!precios || !lista_fechas) {
     console.error("Valores inválidos para precios o lista_fechas");
     return;
@@ -206,28 +206,42 @@ function render_grafico(precios = {}, lista_fechas = []) {
   let color = 0;
 
   Object.entries(precios).forEach(([nombre_moneda, datos]) => {
-    const datasetCompra = {
-      label: `${nombre_moneda} - Compra`,
-      data: datos.compra,
-      borderColor: colores[color],
-      borderWidth: 1,
-      fill: false
-    };
+    if (mostrarSoloCompra) {
+      const datasetCompra = {
+        label: `${nombre_moneda} - Compra`,
+        data: datos.compra,
+        borderColor: colores[color],
+        borderWidth: 1,
+        fill: false
+      };
 
-    color += 1;
+      datasets.push(datasetCompra);
+    } else {
+      const datasetCompra = {
+        label: `${nombre_moneda} - Compra`,
+        data: datos.compra,
+        borderColor: colores[color],
+        borderWidth: 1,
+        fill: false
+      };
 
-    const datasetVenta = {
-      label: `${nombre_moneda} - Venta`,
-      data: datos.venta,
-      borderColor: colores[color],
-      borderWidth: 1,
-      fill: false
-    };
+      color += 1;
 
-    color += 1;
+      const datasetVenta = {
+        label: `${nombre_moneda} - Venta`,
+        data: datos.venta,
+        borderColor: colores[color],
+        borderWidth: 1,
+        fill: false
+      };
 
-    datasets.push(datasetCompra);
-    datasets.push(datasetVenta);
+      color += 1;
+
+      datasets.push(datasetCompra);
+      datasets.push(datasetVenta);
+    }
+
+    color += 1; // Incrementar el contador de colores independientemente
   });
 
   console.log(datasets);
