@@ -74,7 +74,23 @@
 .icono-compartir {
   display: flex;
   align-items: center;
+  padding: 4px;
+  border: 2px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
   gap: 4px;
+}
+
+.icono-compartir:hover {
+  background-color: #f0f0f0;
+  color: #56616d;
+}
+
+#showModalButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .icono-compartir a {
@@ -183,7 +199,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fee599;
+  background-color: #f8f6fe;
+  border: 2px solid black;
   padding: 32px 56px;
   z-index: 100;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);

@@ -11,6 +11,7 @@
   <script src="./js/pages/informes.js" defer></script>
   <script defer src="./js/common.js" type="module"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <title>Cotizador de Monedas Web</title>
 </head>
 
@@ -112,8 +113,8 @@
               <label for="email">Email:</label>
               <input type="email" name="email" id="email">
               <div class="modal__btns">
-                <button class="modal__btn">CERRAR</button>
-                <button class="modal__btn">ENVIAR</button>
+                <button class="modal__btn_cerrar">CERRAR</button>
+                <button class="modal__btn_enviar">ENVIAR</button>
               </div>
             </form>
           </div>
@@ -143,16 +144,16 @@
           </div>
           <div class="container-grafico">
             <h3>Informe</h3>
-            <img src="img/grafico-merval.png" alt="grafico" />
+            <canvas id="grafica"></canvas>
           </div>
           <div class="container-compartir">
             <div class="icono-compartir">
               <i class="fa-solid fa-envelope-open-text"></i>
-              <a href="#">Compartir informacion</a>
+              <button id="showModalButton">Compartir informacion</button>
             </div>
           </div>
           <div class="container-tabla">
-            <div class="table-wrapper" >
+            <div class="table-wrapper">
               <table>
                 <thead>
                   <tr>
@@ -379,6 +380,7 @@
       </p>
     </footer>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
 </body>
 
 </html>
