@@ -32,8 +32,6 @@ async function llamadaAPI(endpoints) {
 }
 
 async function renderMonedas(endpoints) {
-  // document.getElementById("actualizacion").innerHTML = "Fecha de la cotización: " + formatearFecha(monedas[0].fechaActualizacion);
-
   for (const url of Object.values(endpoints)) {
     const monedita = await llamadaAPI(url);
     monedas.push(monedita);
@@ -41,15 +39,24 @@ async function renderMonedas(endpoints) {
   }
 
   if (listaFavoritos.length > 0) {
-    const kirikocho = document.querySelectorAll(".contenido_main--box--card");
-    for (const k of kirikocho) {
-      for (const fav of segmento()[segmento().length - 1].monedas) {
-        if (k.children[0].textContent == fav.moneda) {
-          k.children[1].children[2].checked = true;
+    const monedas_cards = document.querySelectorAll(
+      ".contenido_main--box--card"
+    );
+    for (const card of monedas_cards) {
+      for (const fav of listaFavoritos) {
+        if (
+          card.children[1].children[2].dataset.nombre == fav.nombre &&
+          card.children[1].children[2].dataset.fecha == fav.fechaActualizacion &&
+          card.children[1].children[2].dataset.compra == fav.compra &&
+          card.children[1].children[2].dataset.venta == fav.venta
+        ) {
+          card.children[1].children[2].checked = true;
         }
       }
     }
   }
+  document.getElementById("actualizacion").innerHTML =
+    "Fecha de la cotización: " + formatearFecha(monedas[0].fechaActualizacion);
 }
 
 function formatearFecha(fecha) {
@@ -112,20 +119,7 @@ selectorMoneda.addEventListener("change", (event) => {
 });
 
 function agregarAlStorage(e) {
-  // let bandera = true;
-
-  // for (const fav of segmento()[segmento().length - 1].monedas) {
-  //   if (e.dataset.nombre == fav.moneda) {
-  //     bandera = false;
-  //   }
-  // }
-
-  // if(bandera){
-  // }
-  if (e.checked == false) {
-    let favoritos_filtrados = listaFavoritos.filter((element) => element.nombre != e.dataset.nombre && element.fechaActualizacion != e.dataset.fecha);
-    setearStorage(favoritos_filtrados);
-  } else {
+  if (e.checked) {
     const favorito = {
       nombre: e.dataset.nombre,
       compra: e.dataset.compra,
@@ -134,12 +128,22 @@ function agregarAlStorage(e) {
     };
     listaFavoritos.push(favorito);
     setearStorage(listaFavoritos);
+  } else {
+    listaFavoritos = listaFavoritos.filter(
+      (elem) =>
+        !(
+          elem.nombre === e.dataset.nombre &&
+          elem.fechaActualizacion === e.dataset.fecha &&
+          elem.compra === e.dataset.compra &&
+          elem.venta === e.dataset.venta
+        )
+    );
+    setearStorage(listaFavoritos);
   }
 }
 
-function setearStorage(favorito) {
-  listaFavoritos.push(favorito);
-  localStorage.setItem("favoritos", JSON.stringify(listaFavoritos));
+function setearStorage(lista) {
+  localStorage.setItem("favoritos", JSON.stringify(lista));
 }
 
 function segmento() {
@@ -165,8 +169,7 @@ function segmento() {
   }
 }
 
-
-// setInterval(() => {
-//   renderMonedas();
-//   console.log("holis")
-// }, 300000);
+setInterval(() => {
+  padre.innerHTML = "";
+  renderMonedas(endpoints);
+}, 300000);
