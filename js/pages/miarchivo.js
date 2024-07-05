@@ -33,7 +33,7 @@ function renderArchivo() {
   const cotizacionesAgrupadas = armarMoneda();
   tbody.innerHTML = "";
 
-  if (cotizacionesAgrupadas.length > 0) {
+  if (cotizacionesAgrupadas) {
     for (const cotizacion of cotizacionesAgrupadas) {
       tbody.innerHTML += `
       <tr class="fecha_tabla" style="height: 1rem;">
