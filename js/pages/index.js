@@ -38,6 +38,12 @@ async function renderMonedas(endpoints) {
     armarHTML(monedita);
   }
 
+  estaEnFavoritos()
+  document.getElementById("actualizacion").innerHTML =
+    "Fecha de la cotización: " + formatearFecha(monedas[0].fechaActualizacion);
+}
+
+function estaEnFavoritos() {
   if (listaFavoritos.length > 0) {
     const monedas_cards = document.querySelectorAll(
       ".contenido_main--box--card"
@@ -55,8 +61,6 @@ async function renderMonedas(endpoints) {
       }
     }
   }
-  document.getElementById("actualizacion").innerHTML =
-    "Fecha de la cotización: " + formatearFecha(monedas[0].fechaActualizacion);
 }
 
 function formatearFecha(fecha) {
@@ -88,12 +92,13 @@ function armarHTML(moneda) {
       </div>
       <input type="checkbox"
             id="starCheckbox-${moneda.nombre}" 
-            data-nombre=${moneda.nombre} 
-            data-compra=${moneda.compra} 
-            data-venta=${moneda.venta} 
-            data-fecha=${moneda.fechaActualizacion} 
+            data-nombre="${moneda.nombre}" 
+            data-compra="${moneda.compra}" 
+            data-venta="${moneda.venta}" 
+            data-fecha="${moneda.fechaActualizacion}" 
             onclick="agregarAlStorage(this)" 
             class="starCheckbox"
+
       >
       <label for="starCheckbox-${moneda.nombre}" class="starCheckboxLabel"></label>
     </div>
@@ -103,7 +108,7 @@ function armarHTML(moneda) {
 selectorMoneda.addEventListener("change", (event) => {
   const monedaElegida = event.target.value;
   padre.innerHTML = "";
-
+  
   if (monedaElegida == "all") {
     for (const moneda of monedas) {
       armarHTML(moneda);
@@ -116,6 +121,7 @@ selectorMoneda.addEventListener("change", (event) => {
       }
     }
   }
+  estaEnFavoritos() 
 });
 
 function agregarAlStorage(e) {
@@ -126,6 +132,7 @@ function agregarAlStorage(e) {
       venta: e.dataset.venta,
       fechaActualizacion: e.dataset.fecha,
     };
+    console.log(favorito.nombre);
     listaFavoritos.push(favorito);
     setearStorage(listaFavoritos);
   } else {
@@ -144,29 +151,6 @@ function agregarAlStorage(e) {
 
 function setearStorage(lista) {
   localStorage.setItem("favoritos", JSON.stringify(lista));
-}
-
-function segmento() {
-  if (listaFavoritos) {
-    const agrupado = {};
-
-    for (const moneda of listaFavoritos) {
-      if (!agrupado[moneda.fechaActualizacion]) {
-        agrupado[moneda.fechaActualizacion] = {
-          fechaActualizacion: moneda.fechaActualizacion,
-          monedas: [],
-        };
-      }
-      agrupado[moneda.fechaActualizacion].monedas.push({
-        moneda: moneda.nombre,
-        compra: moneda.compra,
-        venta: moneda.venta,
-      });
-    }
-
-    const resultado = Object.values(agrupado);
-    return resultado;
-  }
 }
 
 setInterval(() => {
