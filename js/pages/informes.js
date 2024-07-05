@@ -58,10 +58,13 @@ selector.addEventListener("change", (event) => {
   } else {
     for (const moneda of monedas) {
       if (monedaElegida == moneda.nombre) {
+        contenido_informe.innerHTML = "";
         armarHTML(moneda);
         const [precios, lista_fechas] = tomar_datos_tabla();
         render_grafico(precios, lista_fechas);
         break;
+      } else {
+        contenido_informe.innerHTML = `<p style="font-size: 2rem; margin: auto;">No tienes esa moneda</p>`;
       }
     }
   }
@@ -276,7 +279,7 @@ function hideModal() {
 document.addEventListener('DOMContentLoaded', () => {
   agruparMonedas();
   const [precios, lista_fechas] = tomar_datos_tabla();
-  render_grafico(precios, lista_fechas);
+  render_grafico(precios, lista_fechas, true);
   const showModalButton = document.getElementById('showModalButton'); // Botón para mostrar el modal
   const hideModalButton = document.querySelector('.modal__btn_cerrar'); // Botón dentro del modal para cerrarlo
   const enviar = document.querySelector('.modal__btn_enviar'); //Boton de enviar dentro del modal
