@@ -11,21 +11,10 @@
   <title>Cotizador de Monedas Web</title>
   <script defer src="./js/common.js" type="module"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script defer src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script defer type="module" src="./js/pages/contacto.js"></script>
 </head>
 
 <body>
   <div class="contenedor_padre">
-    <header>
-      <div class="contenedor_header">
-        <span><img src="img/dolar.png" alt="Icono dolar" /></span>
-        <div class="texto-cabecera">Cotizador de Monedas</div>
-      </div>
-    </header>
-    <!-- <div class="slider" style="--width: 260px; --height:24px; --quantity:11">
-      <div class="list"></div>
-    </div> -->
     <section>
       <div class="elementos-section">
         <navbar>
@@ -72,7 +61,6 @@
               </div>
             </div>
           </div>
-          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
@@ -85,7 +73,7 @@
 
         <div class="contenido_main--container">
           <div class="contenido_main--form">
-            <form id="contact-form">
+            <form action="" method="post">
               <h3>DATO DE CONTACTO</h3>
               <table>
                 <tr>
@@ -103,11 +91,11 @@
                   </td>
                 </tr>
               </table>
-              <div class="contenido_main--form--btns">
-                <button class="limpiar" type="reset">Limpiar</button>
-                <button class="enviar" type="submit">Enviar</button>
-              </div>
             </form>
+            <div class="contenido_main--form--btns">
+              <button class="limpiar">Limpiar</button>
+              <button class="enviar">Enviar</button>
+            </div>
           </div>
 
           <div class="contenido_main--consulta">
@@ -116,8 +104,7 @@
                 Si tiene alguna sugerencia o inconveniente por favor complete el
                 siguiente formulario y envíelo. Lo contactaremos a la brevedad.
               </p>
-              <br />
-              <p>Esta web está desarrollada utilizando (poner el link)</p>
+     
             </div>
 
             <div class="contenido_main--info">
