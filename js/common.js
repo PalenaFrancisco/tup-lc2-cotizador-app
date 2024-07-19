@@ -64,3 +64,4 @@ var swiper = new Swiper(".mySwiper", {
         disableOnInteraction: false,
     },
 });
+

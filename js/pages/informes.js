@@ -188,11 +188,11 @@ function tomar_datos_tabla() {
     });
   });
 
-  lista_fechas.sort((a, b) => {
-    const [diaA, mesA, anoA] = a.split('/').map(Number);
-    const [diaB, mesB, anoB] = b.split('/').map(Number);
-    return new Date(anoA, mesA - 1, diaA) - new Date(anoB, mesB - 1, diaB);
-  });
+  // lista_fechas.sort((a, b) => {
+  //   const [diaA, mesA, anoA] = a.split('/').map(Number);
+  //   const [diaB, mesB, anoB] = b.split('/').map(Number);
+  //   return new Date(anoA, mesA - 1, diaA) - new Date(anoB, mesB - 1, diaB);
+  // });
 
   return [precios, lista_fechas];
 }

@@ -38,9 +38,16 @@ async function renderMonedas(endpoints) {
     armarHTML(monedita);
   }
 
-  estaEnFavoritos()
+  estaEnFavoritos();
   document.getElementById("actualizacion").innerHTML =
-    "Fecha de la cotización: " + formatearFecha(monedas[0].fechaActualizacion);
+    "Fecha de la cotización: " +
+    new Date().toLocaleDateString("es-ES") +
+    " a las " +
+    new Date().toLocaleTimeString("es-ES", {
+      hour: "2-digit",
+      minute: "2-digit",
+    }) +
+    " hs";
 }
 
 function estaEnFavoritos() {
@@ -52,7 +59,8 @@ function estaEnFavoritos() {
       for (const fav of listaFavoritos) {
         if (
           card.children[1].children[2].dataset.nombre == fav.nombre &&
-          card.children[1].children[2].dataset.fecha == fav.fechaActualizacion &&
+          card.children[1].children[2].dataset.fecha ==
+            fav.fechaActualizacion &&
           card.children[1].children[2].dataset.compra == fav.compra &&
           card.children[1].children[2].dataset.venta == fav.venta
         ) {
@@ -63,19 +71,6 @@ function estaEnFavoritos() {
   }
 }
 
-function formatearFecha(fecha) {
-  const opciones = {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-  };
-  const fechaFormateada = new Date(fecha).toLocaleDateString("es-ES", opciones);
-  const horaFormateada = new Date(fecha).toLocaleTimeString("es-ES", {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-  return fechaFormateada + " a las " + horaFormateada;
-}
 
 function armarHTML(moneda) {
   padre.innerHTML += `
@@ -108,7 +103,7 @@ function armarHTML(moneda) {
 selectorMoneda.addEventListener("change", (event) => {
   const monedaElegida = event.target.value;
   padre.innerHTML = "";
-  
+
   if (monedaElegida == "all") {
     for (const moneda of monedas) {
       armarHTML(moneda);
@@ -121,7 +116,7 @@ selectorMoneda.addEventListener("change", (event) => {
       }
     }
   }
-  estaEnFavoritos() 
+  estaEnFavoritos();
 });
 
 function agregarAlStorage(e) {
@@ -154,6 +149,7 @@ function setearStorage(lista) {
 }
 
 setInterval(() => {
+  monedas = [];
   padre.innerHTML = "";
   renderMonedas(endpoints);
 }, 300000);
