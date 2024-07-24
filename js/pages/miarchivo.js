@@ -25,6 +25,7 @@ function armarMoneda() {
     }
 
     const resultado = Object.values(agrupado);
+    console.log(resultado);
     return resultado;
   }
 }
@@ -33,7 +34,7 @@ function renderArchivo() {
   const cotizacionesAgrupadas = armarMoneda();
   tbody.innerHTML = "";
 
-  if (cotizacionesAgrupadas) {
+  if (cotizacionesAgrupadas.length > 0) {
     for (const cotizacion of cotizacionesAgrupadas) {
       tbody.innerHTML += `
       <tr class="fecha_tabla" style="height: 1rem;">
@@ -45,21 +46,24 @@ function renderArchivo() {
       <ul>
       ${cotizacion.monedas
           .map((element) => `<li>${element.moneda.toUpperCase()}</li>`)
-          .join("")}
+          .join("")
+        }
         </ul>
         </td>
         <td>
         <ul class="precios_tabla">
         ${cotizacion.monedas
           .map((element) => `<li>$${element.compra}</li>`)
-          .join("")}
+          .join("")
+        }
           </ul>
           </td>
           <td>
           <ul class="precios_tabla">
           ${cotizacion.monedas
           .map((element) => `<li>$${element.venta}</li>`)
-          .join("")}
+          .join("")
+        }
             </ul>
             </td>
             <td>
@@ -69,7 +73,8 @@ function renderArchivo() {
             (element) =>
               `<li><i class="fa-solid fa-eraser icono" ></i></li>`
           )
-          .join("")}
+          .join("")
+        }
               </ul>
               </td>
               </tr> 

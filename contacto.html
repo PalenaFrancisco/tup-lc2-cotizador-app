@@ -11,6 +11,8 @@
   <title>Cotizador de Monedas Web</title>
   <script defer src="./js/common.js" type="module"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script defer src="./js/pages/contacto.js"></script>
 </head>
 
 <body>
@@ -79,7 +81,7 @@
 
         <div class="contenido_main--container">
           <div class="contenido_main--form">
-            <form action="" method="post">
+            <form id="contact-form" action="" method="post">
               <h3>DATO DE CONTACTO</h3>
               <table>
                 <tr>
@@ -97,11 +99,11 @@
                   </td>
                 </tr>
               </table>
+              <div class="contenido_main--form--btns">
+                <button type="reset" class="limpiar">Limpiar</button>
+                <button type="submit" class="enviar">Enviar</button>
+              </div>
             </form>
-            <div class="contenido_main--form--btns">
-              <button class="limpiar">Limpiar</button>
-              <button class="enviar">Enviar</button>
-            </div>
           </div>
 
           <div class="contenido_main--consulta">
