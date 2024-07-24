@@ -31,7 +31,7 @@
 }
 .contenido_main--form form textarea {
     resize: vertical;
-    max-height: 220px;
+    min-height: 180px;
 }
 .contenido_main--form{
     display: flex;
